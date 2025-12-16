@@ -1,0 +1,56 @@
+- year: 2025
+  title: "DeepPD: Joint Phase and Object Estimation from Phase Diversity with Neural Calibration of a Deformable Mirror"
+  authors: "Magdalena C. Schneider; Courtney Johnson; Cedric Allier; Larissa Heinrich; Diane Adjavon; Joren Husic; Patrick La Rivière; Stephan Saalfeld; Hari Shroff"
+  venue: "arXiv (preprint)"
+  doi: "10.48550/arXiv.2504.14157"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2504.14157"
+- year: 2024
+  title: "Phase diversity-based wavefront sensing for fluorescence microscopy"
+  authors: "Courtney Johnson; Min Guo; Magdalena C. Schneider; Yijun Su; Satya Khuon; Nikolaj Reiser; Yicong Wu; Patrick La Riviere; Hari Shroff"
+  venue: "Optica"
+  doi: "10.1364/OPTICA.518559"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.1364/OPTICA.518559"
+- year: 2022
+  title: "Capturing the start point of the virus-cell interaction with high-speed 3D single-virus tracking"
+  authors: "Courtney Johnson; Jack Exell; Jonathan Aguilar; Kevin Welsher"
+  venue: "Nature Methods 19, 1642–1652"
+  doi: "10.1038/s41592-022-01672-3"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.1038/s41592-022-01672-3"
+- year: 2019
+  title: "Continuous Focal Translation Enhances Rate of Volumetric Imaging"
+  authors: "Courtney Johnson; Jack Exell; Jonathon Kuo; Kevin Welsher"
+  venue: "Optics Express 27, 36241–36258"
+  doi: "10.1364/OE.27.036241"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.1364/OE.27.036241"
+- year: 2019
+  title: "Real-Time 3D Single Particle Tracking: Towards Active Feedback Single Molecule Spectroscopy in Live Cells"
+  authors: "Shangguo Hou; Courtney Johnson; Kevin Welsher"
+  venue: "Molecules 24(15), 2826"
+  doi: "10.3390/molecules24152826"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.3390/molecules24152826"
+- year: 2019
+  title: "Point-Scan Volumetric Imaging Rate Increased by an Optimized Linear Sparse Sampling Pattern"
+  authors: "Courtney Johnson; Kevin Welsher"
+  venue: "Frontiers in Optics + Laser Science (OSA Technical Digest), paper JTu4A.101"
+  doi: "10.1364/FIO.2019.JTu4A.101"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.1364/FIO.2019.JTu4A.101"
+- year: 2016
+  title: "Loop Sequence Context Influences the Formation and Stability of the i-Motif for DNA Oligomers of Sequence (CCCXXX)4, where X = A and/or T, under Slightly Acidic Conditions"
+  authors: "Mikeal McKim; Alexander Buxton; Courtney Johnson; Amanda Metz; Richard D. Sheardy"
+  venue: "The Journal of Physical Chemistry B 120(31), 7652–7661"
+  doi: "10.1021/acs.jpcb.6b04561"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.1021/acs.jpcb.6b04561"

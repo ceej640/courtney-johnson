@@ -1,0 +1,16 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-title">{{ site.title }}</div>
+      <div class="footer-sub">{{ site.description }}</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=8LxDEiEAAAAJ&hl=en" rel="noopener" target="_blank">Google Scholar</a>
+      <a href="https://github.com/Ceej640" rel="noopener" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  // Close nav after selecting a link on mobile
+  document.querySelectorAll('.nav-link').forEach(a => a.addEventListener('click', () => document.body.classList.remove('nav-open')));
+</script>
