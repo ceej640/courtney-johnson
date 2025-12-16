@@ -2,7 +2,7 @@ title: Courtney "CJ" Johnson
 tagline: Postdoctoral Scientist in Microscopy Development
 description: Microscopy • Instrumentation • Image Processing • Applied Bio-Imaging
 url: "https://ceej640.github.io"
-baseurl: ""  # leave blank for user site; set to "/<repo>" for project site
+baseurl: "/courtney-johnson"  # leave blank for user site; set to "/<repo>" for project site
 
 markdown: kramdown
 permalink: pretty
