@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3D-TrIm — Courtney Johnson</title>
+<meta name="description" content="3D-TrIm: a microscope that tracks single viruses at 10³ localizations/sec while imaging their surrounding 3D cellular environment.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0e12'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%233fd6cb' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%233fd6cb'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css?v=36">
+</head>
+<body data-variant="a">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <span class="nav__mark" aria-hidden="true"></span>
+    <span class="nav__name">Courtney Johnson</span>
+    <span class="nav__sub">Ph.D.</span>
+  </a>
+  <nav class="nav__links">
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#research">Research</a>
+    <a href="../index.html#publications">Publications</a>
+    <a href="../index.html#cv">CV</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="subpage">
+  <a class="subpage__back" href="../index.html#research">← Back to research</a>
+  <h1>3D-TrIm — single-virus tracking with co-registered cellular imaging.</h1>
+  <p class="subpage__deck">
+    A microscope that follows a single virus through 3D space at 10³ localizations per second
+    while a second imaging arm captures the surrounding cellular environment — resolving the
+    earliest moments of virus–cell interaction in live cells and tissue.
+  </p>
+
+  <figure class="subpage__hero">
+    <img src="../assets/img/show/virus-tracks.png" alt="Cyan single-virus trajectories overlaid on a magenta 3D intestinal-cell surface">
+    <figcaption>Single-virus trajectories (cyan) resolved on the 3D surface of a living cell.</figcaption>
+  </figure>
+
+  <div class="subpage__body">
+    <p class="subpage__lead">Most microscopes face a hard trade-off: track fast, or image broad. A virus diffusing at the cell surface moves microns in milliseconds: far too quickly for a volumetric scan to capture. Yet, understanding what it's doing requires seeing the cellular landscape around it. 3D-TrIm resolves both at once.</p>
+
+    <h2 class="sp-h2">The problem</h2>
+    <p>Single-particle tracking can localize a fluorescent particle with nanometer precision at kilohertz rates, but only in a tiny focal volume which renders the cellular context invisible. Volumetric microscopy can image a whole cell, but at frame rates far too slow to keep up with a freely diffusing virus. The result: we could watch a virus or its environment, never both, and never at the critical moment of first contact.</p>
+
+    <h2 class="sp-h2">How 3D-TrIm works</h2>
+    <ol class="sp-steps">
+      <li class="sp-step">
+        <div>
+          <h4>Lock onto a single particle</h4>
+          <p>A real-time feedback loop drives a piezo stage to keep a single fluorescent virus
+          centered in the focal spot, reading out its position thousands of times per second.</p>
+        </div>
+      </li>
+      <li class="sp-step">
+        <div>
+          <h4>Image the environment in parallel</h4>
+          <p>A second, independent imaging arm continuously captures the surrounding 3D cellular volume that the virus is exploring.</p>
+        </div>
+      </li>
+      <li class="sp-step">
+        <div>
+          <h4>Co-register trajectory to volume</h4>
+          <p>The particle's high-speed trajectory and the slower cellular volume are stitched into a
+          single co-registered dataset, placing every step of the virus in its true structural context.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="sp-pull">
+      For the first time we could watch a virus "skim" along the cell surface — sampling actin-rich
+      protrusions before committing — in its full three-dimensional context.
+    </p>
+
+    <h2 class="sp-h2">What we found</h2>
+    <p>The co-registered data revealed the first direct observation of virus "skimming" behavior: viruses sampling actin-rich cellular protrusions through distinct diffusional modes that depend on the local surface architecture. Extending the system to live, multilayer epithelial tissue showed these dynamics persist in more physiologically realistic settings... and in our most recent work resolved actin-aided trafficking of SARS-CoV-2 on the plasma membrane.</p>
+
+    <div class="sp-figs">
+      <button class="sp-figbtn" type="button">
+        <img src="../assets/img/projects/virus/thumb-trim1.png" data-full="../assets/img/projects/virus/epithelia-full.png" alt="Virus trajectory tracked through a 3D multicellular epithelial volume">
+        <figcaption>A single virus tracked through a living 3D epithelial layer, with co-registered cellular imaging.</figcaption>
+      </button>
+      <button class="sp-figbtn" type="button">
+        <img src="../assets/img/projects/virus/thumb-trim2.png" data-full="../assets/img/projects/virus/fig2-03.png" alt="Co-registered virus trajectories threading a 3D-rendered multicellular volume">
+        <figcaption>Co-registered single-virus trajectories threading a 3D-rendered multicellular volume.</figcaption>
+      </button>
+    </div>
+
+    <h2 class="sp-h2">Why it matters</h2>
+    <p>The start point of infection: how a virus searches, contacts, and commits to a cell,  has been largely invisible to live imaging. By making that moment observable in 3D, 3D-TrIm turns a previously inaccessible window of virus–cell interaction into quantitative data, with implications for how we understand viral entry and design interventions against it.</p>
+
+    <h2 class="sp-h2">Publications</h2>
+    <ul class="sp-cites">
+      <li class="sp-cite">
+        <a href="https://doi.org/10.1038/s41592-022-01672-3" target="_blank" rel="noopener">Capturing the start point of the virus–cell interaction with high-speed 3D single-virus tracking</a>
+        <div class="sp-cite__m"><b>Nature Methods</b> 19, 1642–1652 (2022)</div>
+      </li>
+      <li class="sp-cite">
+        <a href="https://doi.org/10.64898/2026.04.03.716319" target="_blank" rel="noopener">High-speed 3D single-virus tracking reveals actin-aided viral trafficking of SARS-CoV-2 on the plasma membrane</a>
+        <div class="sp-cite__m"><b>bioRxiv</b> preprint (2026)</div>
+      </li>
+    </ul>
+
+    <h2 class="sp-h2">Press &amp; resources</h2>
+    <ul class="subpage__press">
+      <li>
+        <a href="https://today.duke.edu/2022/11/watch-virus-moments-right-it-attacks" target="_blank" rel="noopener">
+          <span class="subpage__press-kind mono">Duke Today · 2022</span>
+          <span class="subpage__press-title">Watch a virus in the moments right before it attacks</span>
+          <span class="subpage__press-go mono">Read ↗</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.madcitylabs.com/pdfs/WP_Duke_SPT.pdf" target="_blank" rel="noopener">
+          <span class="subpage__press-kind mono">White paper · Mad City Labs</span>
+          <span class="subpage__press-title">Real-time 3D single-particle tracking at Duke</span>
+          <span class="subpage__press-go mono">PDF ↗</span>
+        </a>
+      </li>
+    </ul>
+
+    <nav class="sp-next">
+      <a href="phase-diversity.html"><span class="sp-next__k">← Previous</span>Phase-diversity wavefront sensing</a>
+      <a href="3d-fastr.html"><span class="sp-next__k">Next →</span>3D-FASTR point-scan imaging</a>
+    </nav>
+  </div>
+</main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close">Close ✕</button>
+    <figure><img id="lightbox-img" alt=""><figcaption id="lightbox-cap"></figcaption></figure>
+  </div>
+  <script>
+  (function(){
+    var lb=document.getElementById('lightbox'),img=document.getElementById('lightbox-img'),cap=document.getElementById('lightbox-cap');
+    function open(src,alt,c){img.src=src;img.alt=alt||'';cap.textContent=c||'';lb.classList.add('is-open');lb.setAttribute('aria-hidden','false');}
+    function close(){lb.classList.remove('is-open');lb.setAttribute('aria-hidden','true');img.removeAttribute('src');}
+    document.querySelectorAll('.sp-figbtn, .subpage__hero').forEach(function(b){
+      b.addEventListener('click',function(){var i=b.querySelector('img');var fc=b.querySelector('figcaption');open(i.getAttribute('data-full')||i.src,i.alt,fc?fc.textContent:i.alt);});
+    });
+    lb.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  })();
+  </script>
+
+</body>
+</html>

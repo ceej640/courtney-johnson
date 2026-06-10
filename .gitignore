@@ -1,0 +1,9 @@
+# Working files — not part of the published site
+uploads/
+screenshots/
+.thumbnail
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp

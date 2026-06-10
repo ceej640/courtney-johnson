@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Courtney "CJ" Johnson — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15181d;--muted:#5b6470;--faint:#8b94a0;
+    --line:#dfe3e8;--line-2:#eceef1;
+    --accent:#0f9b94;--accent-deep:#0c7a74;
+    --paper:#ffffff;--sidebar:#f6f8f9;
+    --f-serif:'Newsreader', Georgia, serif;
+    --f-sans:'Inter', system-ui, sans-serif;
+    --f-mono:'IBM Plex Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#e9ecee;color:var(--ink);font-family:var(--f-sans);-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  .cv-bar{
+    position:sticky;top:0;z-index:10;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:12px 20px;background:#11141a;color:#fff;
+    font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;
+  }
+  .cv-bar button{
+    font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;
+    background:var(--accent);color:#06201e;border:0;
+    padding:9px 18px;border-radius:3px;cursor:pointer;text-transform:uppercase;font-weight:600;
+  }
+  .cv-bar button:hover{filter:brightness(1.08)}
+
+  .doc{padding:24px;display:flex;flex-direction:column;align-items:center;gap:24px}
+  .page{
+    width:8.5in;height:11in;
+    background:var(--paper);
+    display:grid;grid-template-columns:2.45in 1fr;
+    box-shadow:0 8px 40px -12px rgba(0,0,0,.3);
+    overflow:hidden;
+  }
+
+  /* Sidebar */
+  .side{background:var(--sidebar);padding:0.34in 0.32in;border-right:1px solid var(--line)}
+  .side__name{font-family:var(--f-serif);font-weight:500;font-size:25px;line-height:1.05;letter-spacing:-.01em;margin:0 0 2px}
+  .side__name .nick{font-style:italic;color:var(--accent-deep)}
+  .side__role{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;line-height:1.45}
+  .side__accent{height:3px;width:46px;background:var(--accent);margin-bottom:16px}
+  .side h2{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);margin:16px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+  .side h2:first-of-type{margin-top:0}
+  .side__contact a{color:var(--ink);text-decoration:none;display:block;font-size:11px;line-height:1.4;word-break:break-word}
+  .side__contact .k{font-family:var(--f-mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);display:block;margin-top:6px}
+  .side__contact{margin-bottom:12px}
+  .side__tags{display:flex;flex-wrap:wrap;gap:5px}
+  .side__tags span{font-family:var(--f-mono);font-size:9px;letter-spacing:.04em;background:#fff;border:1px solid var(--line);color:var(--muted);padding:3px 7px;border-radius:2px}
+  .side__list{margin:0;padding:0;list-style:none}
+  .side__list li{font-size:11px;color:var(--ink);line-height:1.4;margin-bottom:4px}
+  .side__list li .sub{color:var(--muted);font-size:10px}
+  .side__cont{font-family:var(--f-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:10px}
+
+  /* Main column */
+  .main{padding:0.42in 0.46in 0.42in 0.42in;overflow:hidden}
+  .main h2{
+    font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent-deep);margin:0 0 11px;display:flex;align-items:center;gap:10px;
+  }
+  .main h2:not(:first-child){margin-top:16px}
+  .main h2 .cont{font-size:8px;color:var(--faint);letter-spacing:.1em}
+  .main h2::after{content:"";flex:1;height:1px;background:var(--line)}
+  .lead{font-family:var(--f-serif);font-size:13.5px;line-height:1.5;color:#2a2f37;margin:0}
+
+  .entry{margin-bottom:12px}
+  .entry__hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .entry__role{font-family:var(--f-sans);font-weight:600;font-size:13px;color:var(--ink);margin:0}
+  .entry__org{font-size:12px;color:var(--accent-deep);font-weight:500}
+  .entry__yr{font-family:var(--f-mono);font-size:10px;color:var(--faint);letter-spacing:.04em;white-space:nowrap}
+  .entry__note{font-size:11.5px;color:var(--muted);line-height:1.5;margin:3px 0 0}
+
+  .edu{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:5px 0;border-bottom:1px solid var(--line-2)}
+  .edu__d h3{font-family:var(--f-sans);font-weight:600;font-size:12.5px;margin:0;color:var(--ink)}
+  .edu__d .meta{font-size:11px;color:var(--muted);line-height:1.4}
+  .edu__yr{font-family:var(--f-mono);font-size:9.5px;color:var(--faint);letter-spacing:.04em;white-space:nowrap}
+
+  .pub{padding-bottom:8px;margin-bottom:8px;border-bottom:1px solid var(--line-2)}
+  .pub__t{font-size:11.8px;font-weight:600;color:var(--ink);line-height:1.35;margin:0}
+  .pub__a{font-size:10.8px;color:var(--muted);line-height:1.4;margin:1px 0 0}
+  .pub__a .me{color:var(--accent-deep);font-weight:600}
+  .pub__v{font-family:var(--f-mono);font-size:9.5px;color:var(--faint);letter-spacing:.02em;margin:1px 0 0}
+
+  .row{display:flex;gap:10px;padding:5px 0;border-bottom:1px solid var(--line-2);font-size:11.3px;line-height:1.4}
+  .row__yr{font-family:var(--f-mono);font-size:9.5px;color:var(--accent-deep);min-width:54px;letter-spacing:.03em;flex-shrink:0;padding-top:1px}
+  .row__t{color:var(--ink)}
+  .row__t .sub{color:var(--muted)}
+
+  .bullet{font-size:11.5px;color:#3a4049;line-height:1.5;padding-left:14px;position:relative;margin-bottom:5px}
+  .bullet::before{content:"";position:absolute;left:0;top:.55em;width:4px;height:4px;border-radius:50%;background:var(--accent)}
+
+  .affil-line{font-size:11.5px;color:#3a4049;line-height:1.6;margin:0}
+
+  /* Print: one card per page */
+  @media print{
+    html,body{background:#fff}
+    .cv-bar{display:none}
+    @page{size:letter;margin:0}
+    .doc{padding:0;gap:0}
+    .page{box-shadow:none;break-after:page;page-break-after:always}
+    .page:last-child{break-after:auto;page-break-after:auto}
+  }
+  @media (max-width:820px){
+    .page{width:100%;height:auto;grid-template-columns:1fr}
+    .side{border-right:0;border-bottom:1px solid var(--line)}
+  }
+</style>
+</head>
+<body>
+
+<div class="cv-bar">
+  <span>Curriculum Vitae — edit the source below; pages re-flow automatically.</span>
+  <button onclick="window.print()">Save as PDF ↓</button>
+</div>
+
+<!-- ============ RENDERED PAGES ============ -->
+<div class="doc" id="cvPages"></div>
+
+<!-- ============ SOURCE (hidden; edit here) ============ -->
+<aside id="srcSide" hidden>
+  <h1 class="side__name">Courtney <span class="nick">"CJ"</span> Johnson</h1>
+  <p class="side__role">Ph.D. · Optical physicist &amp; microscope developer</p>
+  <div class="side__accent"></div>
+  <div class="side__contact">
+    <h2>Contact</h2>
+    <span class="k">Email</span><a href="mailto:johnsonc5@janelia.hhmi.org">johnsonc5@janelia.hhmi.org</a>
+    <span class="k">Scholar</span><a href="https://scholar.google.com/citations?user=8LxDEiEAAAAJ&hl=en">scholar.google.com</a>
+    <span class="k">ORCID</span><a href="https://orcid.org/0000-0001-5938-1176">0000-0001-5938-1176</a>
+    <span class="k">GitHub</span><a href="https://github.com/Ceej640">github.com/Ceej640</a>
+    <span class="k">Bluesky</span><a href="https://bsky.app/profile/ceej640.bsky.social">@ceej640</a>
+  </div>
+  <h2>Expertise</h2>
+  <div class="side__tags">
+    <span>Optical design</span><span>Method development</span><span>Adaptive optics</span><span>Wavefront sensing</span><span>Light-sheet microscopy</span><span>Two-photon microscopy</span><span>Single-particle tracking</span><span>Active-feedback tracking</span><span>Smart microscopy</span><span>Agentic engineering</span><span>Control systems automation</span><span>LabVIEW</span><span>MATLAB</span>
+  </div>
+  <h2>Certifications</h2>
+  <ul class="side__list"><li>CompTIA A+ <span class="sub">· IT Professional</span></li></ul>
+</aside>
+
+<div id="srcMain" hidden>
+  <h2 data-sec>Profile</h2>
+  <div class="blk"><p class="lead">Optical physicist and instrument builder. I design and build fluorescence microscopes from the optical table up, then pair them with computational methods — adaptive optics, high-speed 3D particle tracking, and volumetric point-scan imaging — so biologists can ask questions existing microscopes can't answer. I build toward microscopy methods capable of intelligent decision-making and systems-level biology.</p></div>
+
+  <h2 data-sec>Education</h2>
+  <div class="blk"><div class="edu"><div class="edu__d"><h3>Ph.D., Chemistry</h3><div class="meta">Duke University · Durham, NC · Advisor: Kevin D. Welsher</div></div><span class="edu__yr">2015 – 2022</span></div></div>
+  <div class="blk"><div class="edu"><div class="edu__d"><h3>B.S., Chemistry</h3><div class="meta">Texas Woman's University · Denton, TX · Summa Cum Laude · ACS Certified</div></div><span class="edu__yr">2010 – 2015</span></div></div>
+
+  <h2 data-sec>Publications</h2>
+  <div class="blk"><div class="pub"><p class="pub__t">High-speed 3D single-virus tracking reveals actin-aided viral trafficking of SARS-CoV-2 on the plasma membrane</p><p class="pub__a">Lin Y, Lu X, Exell J, Lin H, <span class="me">Johnson C</span>, Welsher KD.</p><p class="pub__v">bioRxiv · preprint · 2026 · 10.64898/2026.04.03.716319</p></div></div>
+  <div class="blk"><div class="pub"><p class="pub__t">Phase diversity wavefront sensing for adaptive optics light-sheet fluorescence microscopy</p><p class="pub__a"><span class="me">Johnson C</span>, Schneider MC, Christensen R, Li X, Guo M, La Rivière P, Shroff H.</p><p class="pub__v">Proc. SPIE 13860 · Adaptive Optics &amp; Wavefront Control for Biological Systems XII · 2026</p></div></div>
+  <div class="blk"><div class="pub"><p class="pub__t">DeepPD: Joint phase and object estimation from phase diversity with neural calibration of a deformable mirror</p><p class="pub__a">Schneider MC, <span class="me">Johnson C</span>, Allier C, Heinrich L, Adjavon D, Husic J, La Rivière P, Saalfeld S, Shroff H.</p><p class="pub__v">arXiv · preprint · 2025 · 10.48550/arXiv.2504.14157</p></div></div>
+  <div class="blk"><div class="pub"><p class="pub__t">Phase diversity-based wavefront sensing for fluorescence microscopy</p><p class="pub__a"><span class="me">Johnson C</span>, Guo M, Schneider MC, Su Y, Khuon S, Reiser N, Wu Y, La Rivière P, Shroff H.</p><p class="pub__v">Optica · 2024 · 10.1364/OPTICA.518559</p></div></div>
+  <div class="blk"><div class="pub"><p class="pub__t">Capturing the start point of the virus–cell interaction with high-speed 3D single-virus tracking</p><p class="pub__a"><span class="me">Johnson C</span>, Exell J, Aguilar J, Welsher K.</p><p class="pub__v">Nature Methods · 2022 · 19, 1642–1652 · 10.1038/s41592-022-01672-3</p></div></div>
+  <div class="blk"><div class="pub"><p class="pub__t">Continuous focal translation enhances rate of volumetric imaging</p><p class="pub__a"><span class="me">Johnson C</span>, Exell J, Kuo J, Welsher K.</p><p class="pub__v">Optics Express · 2019 · 27, 36241–36258 · 10.1364/OE.27.036241</p></div></div>
+  <div class="blk"><div class="pub"><p class="pub__t">Real-time 3D single-particle tracking: toward active-feedback single-molecule spectroscopy in live cells</p><p class="pub__a">Hou S, <span class="me">Johnson C</span>, Welsher K.</p><p class="pub__v">Molecules · 2019 · 24(15), 2826 · 10.3390/molecules24152826</p></div></div>
+  <div class="blk"><div class="pub"><p class="pub__t">Point-scan volumetric imaging rate increased by an optimized linear sparse sampling pattern</p><p class="pub__a"><span class="me">Johnson C</span>, Welsher K.</p><p class="pub__v">Frontiers in Optics + Laser Science · 2019 · JTu4A.101</p></div></div>
+  <div class="blk"><div class="pub"><p class="pub__t">Loop sequence context influences the formation and stability of the i-Motif for DNA oligomers (CCCXXX)₄, X = A and/or T</p><p class="pub__a">McKim M, Buxton A, <span class="me">Johnson C</span>, Metz A, Sheardy RD.</p><p class="pub__v">J. Phys. Chem. B · 2016 · 120(31), 7652–7661 · 10.1021/acs.jpcb.6b04561</p></div></div>
+
+  <h2 data-sec>Research Experience</h2>
+  <div class="blk"><div class="entry"><div class="entry__hd"><div><p class="entry__role">Postdoctoral Scientist <span class="entry__org">· HHMI Janelia Research Campus</span></p></div><span class="entry__yr">2022 – present</span></div><p class="entry__note">Shroff Lab · Advisor: Hari Shroff. Phase-diversity adaptive optics for fluorescence microscopy and a two-photon light-sheet (Zebrascope) for whole-brain zebrafish imaging. Collaborations with the Ahrens Lab, Google, and P. La Rivière.</p></div></div>
+  <div class="blk"><div class="entry"><div class="entry__hd"><div><p class="entry__role">Graduate Researcher <span class="entry__org">· Duke University</span></p></div><span class="entry__yr">2015 – 2022</span></div><p class="entry__note">Welsher Lab · Advisor: Kevin D. Welsher. Built 3D-TrIm (single-virus tracking with co-registered 3D imaging) and 3D-FASTR (tessellating point-scan volumetric microscopy). Led a 4-person team; spearheaded full acquisition/processing automation; mentored 2 undergraduates.</p></div></div>
+  <div class="blk"><div class="entry"><div class="entry__hd"><div><p class="entry__role">Undergraduate Researcher <span class="entry__org">· Texas Woman's University</span></p></div><span class="entry__yr">2012 – 2015</span></div><p class="entry__note">Sheardy Lab — structure and physical properties of i-motif DNA via spectroscopic (UV-Vis, CD) and calorimetric (DSC, ITC) methods.</p></div></div>
+
+  <h2 data-sec>Honors &amp; Awards</h2>
+  <div class="blk"><div class="row"><span class="row__yr">2024</span><span class="row__t">Leading Edge Fellow</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2022</span><span class="row__t">1st Prize, Student Speaker — Fitzpatrick Institute of Photonics Annual Meeting</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2021</span><span class="row__t">1st Prize, Poster — Fitzpatrick Institute of Photonics Annual Meeting</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2015</span><span class="row__t">Chancellor's Student Research Scholar — Texas Woman's University</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2014</span><span class="row__t">Phi Kappa Phi Honor Society</span></div></div>
+
+  <h2 data-sec>Grants &amp; Scholarships</h2>
+  <div class="blk"><div class="row"><span class="row__yr">2021</span><span class="row__t">Joe Taylor Adams Fellowship <span class="sub">— Duke Chemistry Department</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2020</span><span class="row__t">Marcus Hobbs Fellowship <span class="sub">— Duke Chemistry Department</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2013–15</span><span class="row__t">TWU S-STEM QuaSARS Program — Full Scholarship (tuition, fees, textbooks)</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2013–14</span><span class="row__t">Robert A. Welch Foundation Grant for Undergraduate Research in Chemistry</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2012–14</span><span class="row__t">Helen Ludeman Scholarship <span class="sub">— TWU Chemistry Department</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2014</span><span class="row__t">TWU Quality Enhancement Plan Experiential Student Scholar Award</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2015</span><span class="row__t">TWU Undergraduate Research Microgrant Program Award</span></div></div>
+
+  <h2 data-sec>Invited Talks</h2>
+  <div class="blk"><div class="row"><span class="row__yr">2026</span><span class="row__t">Frontiers in Optics + Laser Science (FiO+LS), Rochester, NY <span class="sub">— Optica</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2026</span><span class="row__t">ASBMB Annual Meeting, National Harbor, MD</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2026</span><span class="row__t">SPIE Photonics West · BiOS, San Francisco, CA <span class="sub">— Adaptive Optics &amp; Wavefront Control for Biological Systems</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2024</span><span class="row__t">Optica Imaging &amp; Applied Optics Congress, Toulouse, France <span class="sub">— International; Adaptive Optics: Methods, Analysis &amp; Applications</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2024</span><span class="row__t">MathWorks Bio Roundtable Discussion <span class="sub">— Speaker / panelist</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2023</span><span class="row__t">SERMACS, Durham, NC <span class="sub">— Single-Molecule Dynamics in Complex Chemical &amp; Biological Systems</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2022</span><span class="row__t">TWU Celebration of Women in Science, Denton, TX <span class="sub">— Speaker / panelist</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2022</span><span class="row__t">TWU Jane Nelson Institute for Women's Leadership, Denton, TX</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2022</span><span class="row__t">Southeast Biophysics Consortium Meeting, Denton, TX</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2021</span><span class="row__t">65th Biophysical Society Annual Meeting <span class="sub">— Nanoscale Approaches to Biology subgroup symposium</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2020</span><span class="row__t">259th ACS National Meeting <span class="sub">— Symposium honoring Katherine Franz</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2017</span><span class="row__t">STEM Education in Mississippi: Issues &amp; Innovations, Jackson, MS</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2016</span><span class="row__t">TWU Celebration of Women in Science, Denton, TX</span></div></div>
+
+  <h2 data-sec>Selected &amp; Contributed Presentations</h2>
+  <div class="blk"><div class="row"><span class="row__yr">2024</span><span class="row__t">HHMI January Science Meeting <span class="sub">— Poster</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2023</span><span class="row__t">Janelia Symposium <span class="sub">— Selected speaker</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2023</span><span class="row__t">Janelia/EMBL Optical Interest Group <span class="sub">— High-Speed 3D Tracking &amp; Imaging Captures Early Virus–Cell Events</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2022</span><span class="row__t">Fitzpatrick Institute of Photonics Seminar Series <span class="sub">— Selected speaker (1st Prize)</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2022</span><span class="row__t">SPIE Photonics West, San Francisco, CA <span class="sub">— Poster</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2021</span><span class="row__t">JAWSchem Webinar Series <span class="sub">— Multi-Scale 3D Visualization through Single-Virus Tracking</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2021</span><span class="row__t">Fitzpatrick Institute of Photonics Annual Meeting <span class="sub">— Poster, 1st Prize</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2021</span><span class="row__t">65th Biophysical Society Annual Meeting <span class="sub">— Poster</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2019</span><span class="row__t">Frontiers in Optics + Laser Science, Washington, DC <span class="sub">— Lightning talk + poster</span></span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2019</span><span class="row__t">ALIS Kickoff &amp; Southeast Ultrafast Laser Conference</span></div></div>
+  <div class="blk"><div class="row"><span class="row__yr">2018–21</span><span class="row__t">Duke Chemistry Research Symposium <span class="sub">— Talks &amp; posters</span></span></div></div>
+
+  <h2 data-sec>Teaching &amp; Mentoring</h2>
+  <div class="blk"><div class="bullet">Mentored 2 undergraduate researchers; led a 4-person instrument-build team (Duke).</div></div>
+  <div class="blk"><div class="bullet">Graduate Teaching Assistant, Duke — Modern Applications of Chemistry Lab, Organic Chemistry II Lab, Core Concepts in Chemistry (2015–2019); Grader, Organic Chemistry I (2015–2016).</div></div>
+  <div class="blk"><div class="bullet">Designed and taught an 8-week summer chemistry prep course for student-athletes; individualized instruction for 20+ students (Duke Athletics Tutor Program, 2016–2019).</div></div>
+  <div class="blk"><div class="bullet">Undergraduate Teaching Assistant, TWU — Introductory &amp; General Chemistry I/II Laboratories; Grader, Introduction to Chemistry (2012–2015).</div></div>
+
+  <h2 data-sec>Leadership &amp; Professional Development</h2>
+  <div class="blk"><div class="bullet">Duke Emerging Leaders Institute — selective program (20 postdocs &amp; grad students campus-wide) culminating in a team leadership project (2020).</div></div>
+  <div class="blk"><div class="bullet">NextProf Science Workshop, University of Michigan — nationally competitive workshop for future faculty (2021).</div></div>
+  <div class="blk"><div class="bullet">Duke Preparing Future Faculty Program — guest lecture, Analytical Chemistry, NCCU (2020).</div></div>
+  <div class="blk"><div class="bullet">Duke Senior Leadership Insights Interviewer — interviewed a senior executive for a seminar featured on Duke's main YouTube channel (2021).</div></div>
+  <div class="blk"><div class="bullet">Author, Duke Professional Development Blog — essays on leadership and resilience (2019, 2020).</div></div>
+
+  <h2 data-sec>Service &amp; Outreach</h2>
+  <div class="blk"><div class="bullet">Regeneron Science Talent Search — hosted and spoke to finalists during their Janelia tour (2023).</div></div>
+  <div class="blk"><div class="bullet">Science National Honor Society — invited talk, Broad Run High School (2023).</div></div>
+  <div class="blk"><div class="bullet">Duke Women in Science &amp; Engineering (WiSE) — organized women's self-defense programming (2020).</div></div>
+  <div class="blk"><div class="bullet">Duke Brazilian Jiu-Jitsu Club — elected Safety Officer (2019–present).</div></div>
+  <div class="blk"><div class="bullet">Media Coordinator, Duke Graduate Chemistry Council (2016–2018).</div></div>
+  <div class="blk"><div class="bullet">Chemistry magic-show outreach, Kappa Epsilon Mu (KEM Club), TWU (2014).</div></div>
+
+  <h2 data-sec>Professional Affiliations</h2>
+  <div class="blk"><p class="affil-line">Optica (OSA) · SPIE · American Physical Society · Biophysical Society · American Chemical Society</p></div>
+</div>
+
+<script>
+(function(){
+  var PAGE_H = 11 * 96;            // letter height in CSS px
+  var MAIN_PAD = 0.42 * 96 * 2;    // top+bottom padding of .main
+  var USABLE = PAGE_H - MAIN_PAD - 4; // content height available per page
+  var MAIN_W = (8.5 - 2.45) * 96 - (0.46 + 0.42) * 96; // inner main content width
+
+  var sideSrc = document.getElementById('srcSide');
+  var mainSrc = document.getElementById('srcMain');
+
+  // Cumulative measurer — a real .main (no padding) so header margins,
+  // :first-child rules and margin-collapsing all match the live layout.
+  var meas = document.createElement('div');
+  meas.className = 'main';
+  meas.style.cssText = 'position:absolute;left:-9999px;top:0;width:' + MAIN_W +
+    'px;padding:0;visibility:hidden;display:flow-root';
+  document.body.appendChild(meas);
+
+  function contHeader(sec){
+    var ch = sec.cloneNode(true);
+    var sp = document.createElement('span');
+    sp.className = 'cont'; sp.textContent = ' (continued)';
+    ch.appendChild(sp);
+    return ch;
+  }
+
+  // Build flat block list with section tracking
+  var blocks = [];
+  var curSec = null;
+  Array.prototype.forEach.call(mainSrc.children, function(el){
+    if (el.tagName === 'H2'){ curSec = el; blocks.push({type:'h', node:el, sec:el}); }
+    else blocks.push({type:'b', node:el, sec:curSec});
+  });
+
+  // Paginate using cumulative measurement
+  var pages = [];
+  var cur = [];        // committed nodes (clones) for the current page
+  meas.innerHTML = '';
+
+  function flush(){ if (cur.length){ pages.push(cur); cur = []; meas.innerHTML = ''; } }
+
+  for (var i = 0; i < blocks.length; i++){
+    var blk = blocks[i];
+    var clone = blk.node.cloneNode(true);
+
+    // Tentatively add and measure
+    meas.appendChild(clone);
+    var over = meas.scrollHeight > USABLE;
+
+    if (over && cur.length){
+      // doesn't fit — remove, start a new page
+      meas.removeChild(clone);
+      flush();
+      // re-emit the section header if we're mid-section on the new page
+      if (blk.type === 'b' && blk.sec){
+        var ch = contHeader(blk.sec);
+        meas.appendChild(ch);
+        cur.push(ch);
+      }
+      meas.appendChild(clone);
+    }
+
+    // Header that lands near the bottom with no room for its first item:
+    // bump the header to the next page so it never sits alone.
+    if (blk.type === 'h' && i + 1 < blocks.length && blocks[i+1].type === 'b'){
+      var probe = blocks[i+1].node.cloneNode(true);
+      meas.appendChild(probe);
+      var noRoom = meas.scrollHeight > USABLE;
+      meas.removeChild(probe);
+      if (noRoom && cur.length){
+        meas.removeChild(clone);
+        flush();
+        meas.appendChild(clone);
+      }
+    }
+
+    cur.push(clone);
+  }
+  flush();
+
+  // Render
+  var out = document.getElementById('cvPages');
+  pages.forEach(function(nodes, idx){
+    var page = document.createElement('div'); page.className = 'page';
+    var side = document.createElement('aside'); side.className = 'side';
+    if (idx === 0){
+      side.innerHTML = sideSrc.innerHTML;
+    } else {
+      side.innerHTML =
+        '<h1 class="side__name">Courtney <span class="nick">"CJ"</span> Johnson</h1>' +
+        '<p class="side__role">Ph.D. · Curriculum Vitae</p>' +
+        '<div class="side__accent"></div>' +
+        '<p class="side__cont">Page ' + (idx+1) + ' of ' + pages.length + '</p>';
+    }
+    var main = document.createElement('main'); main.className = 'main';
+    nodes.forEach(function(n){ main.appendChild(n); });
+    page.appendChild(side); page.appendChild(main);
+    out.appendChild(page);
+  });
+
+  document.body.removeChild(meas);
+})();
+</script>
+
+</body>
+</html>
