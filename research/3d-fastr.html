@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3D-FASTR — Courtney Johnson</title>
+<meta name="description" content="3D-FASTR: tessellating point-scan microscopy that captures 3D volumes 4–8× faster than conventional z-stacks.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0e12'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%233fd6cb' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%233fd6cb'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css?v=36">
+</head>
+<body data-variant="a">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <span class="nav__mark" aria-hidden="true"></span>
+    <span class="nav__name">Courtney Johnson</span>
+    <span class="nav__sub">Ph.D.</span>
+  </a>
+  <nav class="nav__links">
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#research">Research</a>
+    <a href="../index.html#publications">Publications</a>
+    <a href="../index.html#cv">CV</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="subpage">
+  <a class="subpage__back" href="../index.html#research">← Back to research</a>
+  <h1>3D-FASTR — tessellating point-scan imaging.</h1>
+  <p class="subpage__deck">
+    Point-scanning microscopes remain the workhorses of biology, yet scanning 3D volumes
+    point-by-point is agonizingly slow. 3D-FASTR is an unconventional approach to point-volume
+    scanning: using tessellating patterns instead of plane-by-plane, optimized-sparse point patterns
+    capture 3D volumes 4–8× faster than conventional z-stacks and pair naturally with
+    active-feedback tracking systems.
+  </p>
+
+  <figure class="subpage__hero">
+    <img src="../assets/img/projects/tessellating/hero.png" alt="3D-FASTR schematic comparing tessellating point-scan sampling to a conventional z-stack">
+    <figcaption>3D-FASTR tessellating sampling (right) vs. a conventional stage-scanned z-stack (left).</figcaption>
+  </figure>
+
+  <div class="subpage__body">
+    <p class="subpage__lead">
+      Point-scan microscopes — confocal, two-photon — image deep and clean, but rarely fast. They
+      visit the sample one point at a time along a rigid raster, and building a 3D volume means
+      grinding through plane after plane. 3D-FASTR rethinks the scan pattern itself.
+    </p>
+
+    <h2 class="sp-h2">The problem</h2>
+    <p>
+      To capture a volume, a conventional point-scan microscope sweeps a full 2D raster, steps the
+      focus, and repeats — spending most of its time re-measuring regions that haven't changed.
+      For anything dynamic, the volume is stale before it finishes. The scan pattern, not the
+      detector, is the bottleneck.
+    </p>
+
+    <h2 class="sp-h2">How 3D-FASTR works</h2>
+    <ol class="sp-steps">
+      <li class="sp-step">
+        <div>
+          <h4>Tessellate the volume</h4>
+          <p>Instead of a plane-by-plane raster, distribute sample points across all three dimensions
+          in a tessellating pattern that tiles space efficiently and leaves no large gaps.</p>
+        </div>
+      </li>
+      <li class="sp-step">
+        <div>
+          <h4>Sample sparsely, but optimally</h4>
+          <p>An optimized linear sparse-sampling pattern places far fewer points than a full raster
+          while preserving the information needed to reconstruct the volume.</p>
+        </div>
+      </li>
+      <li class="sp-step">
+        <div>
+          <h4>Reconstruct the full volume</h4>
+          <p>Because the pattern fills space evenly, the sparse measurements interpolate into a
+          continuous 3D volume — at a fraction of the acquisition time.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="sp-pull">
+      Break the scan out of the raster, and a point-scan microscope can fill a volume in the time it
+      used to spend on a few planes.
+    </p>
+
+    <h2 class="sp-h2">Seeing it work</h2>
+    <p>
+      The sequence below is a single 3D-FASTR acquisition filling a cell volume over time — raw
+      tessellated stripes accumulating into an interpolated 3D reconstruction.
+    </p>
+    <div class="sp-figs">
+      <button class="sp-figbtn" type="button">
+        <img src="../assets/img/projects/tessellating/fastr-fg.png" data-full="../assets/img/projects/tessellating/fig2.png" alt="Tessellating scan patterns at different sparsity, sampling a cell volume in stripes">
+        <figcaption>Tessellating scan patterns sample the volume in stripes — sparser patterns trade fill for speed (2×, 4×).</figcaption>
+      </button>
+      <button class="sp-figbtn" type="button">
+        <img src="../assets/img/projects/tessellating/thumb-vol.png" data-full="../assets/img/projects/tessellating/vol3d-95.png" alt="A 3D cell-layer volume reconstructed from a tessellated FASTR scan">
+        <figcaption>A 3D cell-layer volume reconstructed from a single tessellated FASTR scan.</figcaption>
+      </button>
+    </div>
+
+    <h2 class="sp-h2">What we built</h2>
+    <p>
+      A generalizable theory for multi-dimensional tessellating scan patterns, and a volumetric
+      two-photon laser-scanning microscope demonstrating a 4–8× speedup over conventional z-stack
+      acquisition. Because it accelerates the scan rather than the hardware, 3D-FASTR slots directly
+      into active-feedback systems — the natural partner to single-particle tracking microscopes like 3D-TrIm.
+    </p>
+
+    <h2 class="sp-h2">Publications</h2>
+    <ul class="sp-cites">
+      <li class="sp-cite">
+        <a href="https://doi.org/10.1364/OE.27.036241" target="_blank" rel="noopener">Continuous focal translation enhances rate of volumetric imaging</a>
+        <div class="sp-cite__m"><b>Optics Express</b> 27, 36241–36258 (2019)</div>
+      </li>
+      <li class="sp-cite">
+        <a href="https://doi.org/10.1364/FIO.2019.JTu4A.101" target="_blank" rel="noopener">Point-scan volumetric imaging rate increased by an optimized linear sparse sampling pattern</a>
+        <div class="sp-cite__m"><b>Frontiers in Optics + Laser Science</b> JTu4A.101 (2019)</div>
+      </li>
+    </ul>
+
+    <nav class="sp-next">
+      <a href="3d-trim.html"><span class="sp-next__k">← Previous</span>3D-TrIm single-virus tracking</a>
+      <a href="phase-diversity.html"><span class="sp-next__k">Next →</span>Phase-diversity wavefront sensing</a>
+    </nav>
+  </div>
+</main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close">Close ✕</button>
+    <figure><img id="lightbox-img" alt=""><figcaption id="lightbox-cap"></figcaption></figure>
+  </div>
+  <script>
+  (function(){
+    var lb=document.getElementById('lightbox'),img=document.getElementById('lightbox-img'),cap=document.getElementById('lightbox-cap');
+    function open(src,alt,c){img.src=src;img.alt=alt||'';cap.textContent=c||'';lb.classList.add('is-open');lb.setAttribute('aria-hidden','false');}
+    function close(){lb.classList.remove('is-open');lb.setAttribute('aria-hidden','true');img.removeAttribute('src');}
+    document.querySelectorAll('.sp-figbtn, .subpage__hero').forEach(function(b){
+      b.addEventListener('click',function(){var i=b.querySelector('img');var fc=b.querySelector('figcaption');open(i.getAttribute('data-full')||i.src,i.alt,fc?fc.textContent:i.alt);});
+    });
+    lb.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  })();
+  </script>
+
+</body>
+</html>

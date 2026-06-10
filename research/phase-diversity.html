@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phase-diversity wavefront sensing — Courtney Johnson</title>
+<meta name="description" content="Phase-diversity adaptive optics: image-based wavefront sensing for fluorescence microscopy — no Shack–Hartmann sensor, no guide star.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0e12'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%233fd6cb' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%233fd6cb'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css?v=36">
+</head>
+<body data-variant="a">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <span class="nav__mark" aria-hidden="true"></span>
+    <span class="nav__name">Courtney Johnson</span>
+    <span class="nav__sub">Ph.D.</span>
+  </a>
+  <nav class="nav__links">
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#research">Research</a>
+    <a href="../index.html#publications">Publications</a>
+    <a href="../index.html#cv">CV</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="subpage">
+  <a class="subpage__back" href="../index.html#research">← Back to research</a>
+  <h1>Phase-diversity wavefront sensing for fluorescence microscopy.</h1>
+  <p class="subpage__deck">
+    A rapid, image-based adaptive-optics approach that recovers the optical wavefront directly
+    from the images a microscope already takes — no Shack–Hartmann sensor, no guide star —
+    broadly compatible across modalities and extended to 3D and dual-view light sheet.
+  </p>
+
+  <figure class="subpage__hero">
+    <img src="../assets/img/projects/pdao/hero.png" alt="Phase-diverse wavefront estimation: paired focal and defocused images used to recover optical aberrations">
+    <figcaption>Phase-diverse wavefront estimation — paired acquisitions feed a joint object/wavefront estimator.</figcaption>
+  </figure>
+
+  <div class="subpage__body">
+    <p class="subpage__lead">
+      Image quality deep inside living samples is limited by optical aberrations that vary in
+      space and time. Correcting them — adaptive optics — usually means dedicated wavefront-sensing
+      hardware and a bright reference point. Phase diversity removes both requirements, recovering
+      the wavefront from the sample itself.
+    </p>
+
+    <h2 class="sp-h2">The problem</h2>
+    <p>
+      As light travels through tissue it accumulates aberrations that blur the image and scramble
+      fine structure. Classical adaptive optics borrows from astronomy: a Shack–Hartmann sensor
+      measures the wavefront from a guide star. But biological samples rarely offer a convenient
+      point source, and adding a hardware sensor complicates every microscope it touches.
+    </p>
+
+    <h2 class="sp-h2">How phase diversity works</h2>
+    <ol class="sp-steps">
+      <li class="sp-step">
+        <div>
+          <h4>Acquire phase-diverse images</h4>
+          <p>Capture two or more images of the same scene with a known, deliberate difference between
+          them — typically a calibrated defocus applied by a deformable mirror.</p>
+        </div>
+      </li>
+      <li class="sp-step">
+        <div>
+          <h4>Jointly estimate object and wavefront</h4>
+          <p>A Gauss–Newton optimizer solves for the unknown specimen and the unknown aberration
+          simultaneously — the known diversity between frames makes the problem well-posed.</p>
+        </div>
+      </li>
+      <li class="sp-step">
+        <div>
+          <h4>Correct — in hardware or in software</h4>
+          <p>The recovered wavefront drives a deformable mirror to physically cancel the aberration,
+          or, with DeepPD, feeds a learned model that restores the image computationally.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="sp-pull">
+      The microscope becomes its own wavefront sensor — aberrations are read out of the very images
+      we already collect.
+    </p>
+
+    <h2 class="sp-h2">What we built</h2>
+    <p>
+      Prototype widefield and asymmetric dual-view light-sheet microscopes implementing a
+      Gauss–Newton phase-diverse estimator, validated on cellular structures. We then extended the
+      method to 3D samples and built <strong>DeepPD</strong> — a neural model of the deformable
+      mirror's response that enables joint phase-and-object estimation and opens a path to
+      computational, hardware-free aberration correction.
+    </p>
+
+    <div class="sp-figs">
+      <button class="sp-figbtn" type="button">
+        <img src="../assets/img/projects/pdao/mt-bc.png" data-full="../assets/img/projects/pdao/cells-strip.png" alt="Microtubule network: ground truth, aberrated, and phase-diversity-corrected">
+        <figcaption>Microtubules — an aberrated image (blurred) restored by phase-diversity correction.</figcaption>
+      </button>
+      <button class="sp-figbtn" type="button">
+        <img src="../assets/img/projects/pdao/actin-mno2.png" data-full="../assets/img/projects/pdao/filaments.png" alt="Actin filaments: ground truth, aberrated, and phase-diversity-corrected, with line profiles">
+        <figcaption>Actin filaments — ground truth, aberrated, and phase-diversity-corrected, with intensity line profiles.</figcaption>
+      </button>
+    </div>
+
+    <h2 class="sp-h2">Why it matters</h2>
+    <p>
+      Because phase diversity needs no special hardware and no guide star, it can be added to
+      microscopes that could never host a traditional wavefront sensor — broadening access to
+      high-resolution imaging at depth. The computational direction, DeepPD, points toward
+      microscopes that correct themselves with software alone.
+    </p>
+
+    <h2 class="sp-h2">Collaborators</h2>
+    <p class="sp-collab">
+      Developed in the <strong>Shroff Lab</strong> (PI: Hari Shroff) at HHMI Janelia, with algorithmic
+      collaboration from <strong>Patrick La Rivière</strong> (University of Chicago) and the Saalfeld Lab.
+    </p>
+
+    <h2 class="sp-h2">Publications</h2>
+    <ul class="sp-cites">
+      <li class="sp-cite">
+        <a href="https://doi.org/10.1364/OPTICA.518559" target="_blank" rel="noopener">Phase diversity-based wavefront sensing for fluorescence microscopy</a>
+        <div class="sp-cite__m"><b>Optica</b> (2024)</div>
+      </li>
+      <li class="sp-cite">
+        <a href="https://doi.org/10.48550/arXiv.2504.14157" target="_blank" rel="noopener">DeepPD: Joint phase and object estimation from phase diversity with neural calibration of a deformable mirror</a>
+        <div class="sp-cite__m"><b>arXiv</b> preprint (2025)</div>
+      </li>
+      <li class="sp-cite">
+        <a href="https://doi.org/10.1117/12.3047138" target="_blank" rel="noopener">Phase diversity wavefront sensing for adaptive optics light-sheet fluorescence microscopy</a>
+        <div class="sp-cite__m"><b>Proc. SPIE 13860</b> (2026)</div>
+      </li>
+    </ul>
+
+    <h2 class="sp-h2">Press &amp; resources</h2>
+    <ul class="subpage__press">
+      <li>
+        <a href="https://www.janelia.org/news/janelia-scientists-adapt-astronomy-method-to-unblur-microscopy-images" target="_blank" rel="noopener">
+          <span class="subpage__press-kind mono">Janelia News</span>
+          <span class="subpage__press-title">Janelia scientists adapt an astronomy method to unblur microscopy images</span>
+          <span class="subpage__press-go mono">Read ↗</span>
+        </a>
+      </li>
+    </ul>
+
+    <nav class="sp-next">
+      <a href="3d-fastr.html"><span class="sp-next__k">← Previous</span>3D-FASTR point-scan imaging</a>
+      <a href="3d-trim.html"><span class="sp-next__k">Next →</span>3D-TrIm single-virus tracking</a>
+    </nav>
+  </div>
+</main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close">Close ✕</button>
+    <figure><img id="lightbox-img" alt=""><figcaption id="lightbox-cap"></figcaption></figure>
+  </div>
+  <script>
+  (function(){
+    var lb=document.getElementById('lightbox'),img=document.getElementById('lightbox-img'),cap=document.getElementById('lightbox-cap');
+    function open(src,alt,c){img.src=src;img.alt=alt||'';cap.textContent=c||'';lb.classList.add('is-open');lb.setAttribute('aria-hidden','false');}
+    function close(){lb.classList.remove('is-open');lb.setAttribute('aria-hidden','true');img.removeAttribute('src');}
+    document.querySelectorAll('.sp-figbtn, .subpage__hero').forEach(function(b){
+      b.addEventListener('click',function(){var i=b.querySelector('img');var fc=b.querySelector('figcaption');open(i.getAttribute('data-full')||i.src,i.alt,fc?fc.textContent:i.alt);});
+    });
+    lb.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  })();
+  </script>
+
+</body>
+</html>
