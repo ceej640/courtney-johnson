@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Courtney "CJ" Johnson, Ph.D. — Microscopy Development</title>
+<meta name="description" content="Courtney 'CJ' Johnson, Ph.D. — optical physicist and instrument builder developing fluorescence microscopes and computational methods for biological imaging at HHMI Janelia.">
+<meta property="og:title" content="Courtney &quot;CJ&quot; Johnson, Ph.D.">
+<meta property="og:description" content="Optical physicist building fluorescence microscopes that see deeper, faster, smarter.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0e12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0e12'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%233fd6cb' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%233fd6cb'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=35">
+</head>
+<body data-variant="a">
+
+
+
+<!-- ======================================================== -->
+<!--  TOP NAV (shared)                                         -->
+<!-- ======================================================== -->
+<header class="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__mark" aria-hidden="true"></span>
+    <span class="nav__name">Courtney Johnson</span>
+    <span class="nav__sub">Ph.D.</span>
+  </a>
+  <nav class="nav__links">
+    <a href="#about">About</a>
+    <a href="#interests">Interests</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#talks">Talks</a>
+    <a href="#beyond">Beyond the bench</a>
+    <a href="cv.html">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ======================================================== -->
+<!--  VARIANT A — NOCTURNE                                     -->
+<!-- ======================================================== -->
+<main class="v v-a" id="top">
+
+  <section class="a-hero">
+    <div class="a-hero__media">
+      <a href="research/3d-trim.html" class="a-hero__link" aria-label="3D-TrIm project page">
+        <img src="assets/img/hero-cell.png" alt="Fluorescence microscopy image: single-virus trajectories traced across a 3D intestinal-cell surface">
+      </a>
+      <svg class="a-hero__traj" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="trajA" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="#7be3ff" stop-opacity="0"/>
+            <stop offset="60%" stop-color="#7be3ff" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+          </linearGradient>
+          <linearGradient id="trajB" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#9be9ff" stop-opacity="0"/>
+            <stop offset="70%" stop-color="#9be9ff" stop-opacity=".85"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+          </linearGradient>
+          <linearGradient id="trajC" x1="0" x2="1" y1="1" y2="0">
+            <stop offset="0%" stop-color="#7be3ff" stop-opacity="0"/>
+            <stop offset="65%" stop-color="#7be3ff" stop-opacity=".75"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+        <path class="traj traj--1" d="M 1100 760 C 1180 700, 1240 640, 1290 560 S 1370 410, 1420 330 S 1500 200, 1560 140" stroke="url(#trajA)" fill="none" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="traj traj--2" d="M 950 820 C 1020 740, 1100 700, 1180 620 S 1260 480, 1320 400 S 1380 280, 1440 200" stroke="url(#trajB)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+        <path class="traj traj--3" d="M 1240 800 C 1280 720, 1320 660, 1340 580 S 1360 440, 1400 360 S 1450 240, 1500 180" stroke="url(#trajC)" fill="none" stroke-width="1.6" stroke-linecap="round"/>
+        <circle class="traj-dot traj-dot--1" r="3.5" fill="#fff"/>
+        <circle class="traj-dot traj-dot--2" r="2.8" fill="#fff"/>
+        <circle class="traj-dot traj-dot--3" r="2.4" fill="#fff"/>
+      </svg>
+      <div class="a-hero__scrim"></div>
+    </div>
+    <div class="a-hero__cut">
+      <h1 class="a-hero__title">
+        Building microscopes<br>
+        that see <em>farther,</em><br>
+        <em>faster,</em> <em>smarter.</em>
+      </h1>
+      <p class="a-hero__lede">Optical physicist and instrument builder developing new fluorescence microscopes and computational methods for biological imaging — adaptive optics, high-speed 3D particle tracking, and rapid point-scan systems that extract quantitative insight from living samples.</p>
+      <div class="a-hero__meta">
+        <a class="a-btn" href="#research">Research <span aria-hidden>→</span></a>
+        <a class="a-btn a-btn--ghost" href="cv.html">View CV</a>
+        <a class="a-btn a-btn--ghost" href="https://scholar.google.com/citations?user=8LxDEiEAAAAJ&hl=en">Google Scholar</a>
+      </div>
+      <div class="a-spectrum" aria-hidden="true"></div>
+
+      <div class="a-hero__affil">
+        <a class="a-affil" href="https://www.janelia.org" aria-label="HHMI Janelia Research Campus">
+          <span class="a-affil__logo"><img src="assets/img/janelia-logo-white.png" alt="HHMI Janelia Research Campus logo" class="a-affil__img"></span>
+          <span class="a-affil__t"><span class="mono a-affil__top">Postdoctoral Scientist</span><span class="a-affil__main">HHMI Janelia Research Campus</span></span>
+        </a>
+        <a class="a-affil" href="https://leadingedgesymposium.org" aria-label="Leading Edge Fellows">
+          <span class="a-affil__logo"><img src="assets/img/leading-edge-logo-cropped.png" alt="Leading Edge Symposium logo" class="a-affil__img"></span>
+          <span class="a-affil__t"><span class="mono a-affil__top">Fellow</span><span class="a-affil__main">Leading Edge Symposium</span></span>
+        </a>
+        <a class="a-affil" href="https://duke.edu" aria-label="Duke University">
+          <span class="a-affil__logo a-affil__logo--text"><span class="a-affil__wordmark a-affil__wordmark--duke">Duke</span></span>
+          <span class="a-affil__t"><span class="mono a-affil__top">Ph.D.</span><span class="a-affil__main">Duke University · Chemistry</span></span>
+        </a>
+        <a class="a-affil" href="https://twu.edu" aria-label="Texas Woman's University">
+          <span class="a-affil__logo a-affil__logo--text"><span class="a-affil__wordmark a-affil__wordmark--twu">TWU</span></span>
+          <span class="a-affil__t"><span class="mono a-affil__top">B.S.</span><span class="a-affil__main">Texas Woman’s University · Chemistry</span></span>
+        </a>
+      </div>
+    </div>
+    <div class="a-hero__caption mono"><span>FIG ·</span> Single-virus trajectories on 3D intestinal epithelium · <em>Nat. Methods</em>, 2022</div>
+  </section>
+
+    <!-- About / Bio -->
+  <section class="a-about a-about--dual reveal" id="about">
+    </div>
+    <div class="a-about__portraits">
+      <figure class="a-portrait a-portrait--lab">
+        <img src="assets/img/lab-coat.jpg?v=2" alt="Courtney Johnson at the optical bench">
+      </figure>
+    </div>
+    <div class="a-about__text">
+      <h2 class="a-h2">About</h2>
+      <p class="a-lede">
+        I design and build optical systems from an empty table, then pair them with
+        computational methods so biologists can ask questions that existing microscopes
+        can't answer.
+      </p>
+      <p>I am a Postdoctoral Scientist at HHMI Janelia Research Campus, developing rapid and robust image-based wavefront sensing techniques for adaptive optics. I completed my Ph.D. in Chemistry with Kevin Welsher at Duke University, where I developed 3D-TrIm — a microscope that tracks single viruses using real-time adaptive feedback at 1000 localizations per second while simultaneously imaging their surrounding 3D cellular environment.</p>
+      <p>I don't just build optics: I endeavor to push the envelope of "smart microscopy" by developing smart control systems using an automation-first mindset. My goal as a tool-builder is to develop easy-to-use microscopes that become broadly usable and accessible tools for biology.</p>
+      <p class="a-vision">
+        I'm building toward a lab that develops microscopy methods capable of intelligent
+        decision-making and systems-level biology.
+      </p>
+      <dl class="a-kv mono">
+        <dt>Now</dt><dd>Postdoc · HHMI Janelia Research Campus</dd>
+        <dt>Fellow</dt><dd>Leading Edge Symposium</dd>
+        <dt>Ph.D.</dt><dd>Chemistry · Duke University · Welsher Lab</dd>
+        <dt>B.S.</dt><dd>Chemistry · Texas Woman's University · Summa Cum Laude</dd>
+        <dt>Focus</dt><dd>Adaptive optics · Smart microscopy · Computational imaging</dd>
+      </dl>
+    </div>
+  </section>
+
+  
+
+  
+
+  <!-- Research Interests / Themes -->
+  <section class="a-themes reveal" id="interests">
+    <header class="a-section-head">
+      <h2 class="a-h2">Research interests</h2>
+      <p class="a-sub">Motifs that guide my developments:</p>
+    </header>
+    <div class="a-themes__grid">
+      <article class="a-theme">
+        <h3>Smart microscopy</h3>
+        <p>Planes can fly themselves and land, why not microscopes? I am obsessed with UX and the idea that the microscopes I build should be so easy to operate that anyone can use them.</p>
+      </article>
+      <article class="a-theme">
+        <h3>Agentic engineering</h3>
+        <p>Building acquisition, control, and analysis pipelines that adapt and automate closes the loop between what the microscope sees and what it does next. An automation-first mindset, from the optical table to the dataset.</p>
+      </article>
+      <article class="a-theme">
+        <h3>Computational imaging</h3>
+        <p>Treating the optical system and the software as one design problem. Co-designing the imaging system and its reconstruction lets us extract more information per photon — and see what conventional hardware alone cannot.</p>
+      </article>
+      <article class="a-theme">
+        <h3>Tools that travel</h3>
+        <p>The best instrument is the one other people can actually use. I care about turning a one-off optical demo into a method biologists reach for — robust, documented, and broadly compatible across modalities.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Research (was Projects) -->
+  <section class="a-projects reveal" id="research">
+    <header class="a-section-head">
+      <h2 class="a-h2">Research</h2>
+      <p class="a-sub">A sampling of my contributions to microscopy</p>
+    </header>
+
+    <article class="a-project">
+      <div class="a-project__media">
+        <img src="assets/img/projects/pdao/hero.png" alt="Phase-diversity wavefront estimation: paired in-focus and defocused microscopy images used to recover optical aberrations">
+      </div>
+      <div class="a-project__body">
+        <h3><a class="a-project__link" href="research/phase-diversity.html">Phase-diversity wavefront sensing <span class="a-project__arrow" aria-hidden="true">↗</span></a></h3>
+        <p>Image-based adaptive optics method for fluorescence microscopy adapted from astronomy. A rapid, modality-agnostic approach that recovers the wavefront directly from phase-diverse image sets.</p>
+        <ul class="a-bul">
+          <li>Only a few (4) extra images needed for sensing</li>
+          <li>Rapid computation time (a few hundred ms)</li>
+          <li>Compatible with biological structures: no guidestar required</li>
+        </ul>
+        <div class="mono a-project__refs"><em>Optica</em> 2024 · <em>Proc. SPIE</em> 2026 · <em>arXiv</em> 2025</div>
+      </div>
+    </article>
+
+    <article class="a-project a-project--flip">
+      <div class="a-project__media">
+        <img src="assets/img/show/virus-tracks.png" alt="3D-TrIm data: cyan single-virus trajectories overlaid on a magenta intestinal-cell surface">
+      </div>
+      <div class="a-project__body">
+        <h3><a class="a-project__link" href="research/3d-trim.html">3D-TrIm — high-speed single-virus tracking <span class="a-project__arrow" aria-hidden="true">↗</span></a></h3>
+        <p>Simultaneous real-time 3D tracking of single viruses with co-registered volumetric imaging of the surrounding cellular environment. Captured the earliest moments of virus–cell interaction at 1000 localizations/sec.</p>
+        <ul class="a-bul">
+          <li>Co-registered single-particle trajectories and 3D cellular imaging.</li>
+          <li>First observation of virus "skimming" behavior on actin-rich protrusions.</li>
+          <li>Extended to live tissue systems via multi-layer epithelial cells.</li>
+        </ul>
+        <div class="mono a-project__refs"><em>Nature Methods</em> 2022</div>
+      </div>
+    </article>
+
+    <article class="a-project">
+      <div class="a-project__media">
+        <img src="assets/img/projects/tessellating/hero.png" alt="3D-FASTR schematic comparing tessellating point-scan sampling against a conventional z-stack">
+      </div>
+      <div class="a-project__body">
+        <h3><a class="a-project__link" href="research/3d-fastr.html">3D-FASTR — rapid point-scan imaging
+↗</a></h3>
+        <p>Tesselating 3D point-scan patterns optimize sparse sampling that increases the rate of point-scan volumetric imaging and enable simultaneous imaging with active-feedback tracking systems.</p>
+        <ul class="a-bul">
+          <li>Developed theory for tessellating 3D point-scan patterns.</li>
+          <li>Demonstrated volumetric speeds beyond conventional z-stack acquisition.</li>
+          <li>Natural integration with active-feedback tracking systems.</li>
+        </ul>
+        <div class="mono a-project__refs"><em>Optics Express</em> 2019 · <em>FiO</em> 2019</div>
+      </div>
+    </article>
+  </section>
+
+<!-- Publications -->
+  <section class="a-pubs reveal" id="publications">
+    <header class="a-section-head">
+      <h2 class="a-h2">Publications</h2>
+      <p class="a-sub">Peer-reviewed papers, preprints, and proceedings. <a href="https://scholar.google.com/citations?user=8LxDEiEAAAAJ&hl=en">Google Scholar →</a></p>
+    </header>
+
+    <ol class="a-pub-list">
+      <li class="a-pub">
+        <div class="mono a-pub__year">2026</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.64898/2026.04.03.716319" target="_blank" rel="noopener">High-speed 3D single-virus tracking reveals actin-aided viral trafficking of SARS-CoV-2 on the plasma membrane</a></h4>
+          <p class="a-pub__auth">Lin Y, Lu X, Exell J, Lin H, <strong>Johnson C</strong>, Welsher KD.</p>
+          <p class="a-pub__ven mono">bioRxiv · preprint · 2026</p>
+        </div>
+      </li>
+      <li class="a-pub">
+        <div class="mono a-pub__year">2026</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.1117/12.3047138" target="_blank" rel="noopener">Phase diversity wavefront sensing for adaptive optics light-sheet fluorescence microscopy</a></h4>
+          <p class="a-pub__auth"><strong>Johnson C</strong>, Schneider MC, Christensen R, Li X, Guo M, La Rivière P, Shroff H.</p>
+          <p class="a-pub__ven mono">Proc. SPIE 13860 · Adaptive Optics &amp; Wavefront Control for Biological Systems XII · 2026</p>
+        </div>
+      </li>
+      <li class="a-pub">
+        <div class="mono a-pub__year">2025</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.48550/arXiv.2504.14157" target="_blank" rel="noopener">DeepPD: Joint phase and object estimation from phase diversity with neural calibration of a deformable mirror</a></h4>
+          <p class="a-pub__auth">Schneider MC, <strong>Johnson C</strong>, Allier C, Heinrich L, Adjavon D, Husic J, La Rivière P, Saalfeld S, Shroff H.</p>
+          <p class="a-pub__ven mono">arXiv · preprint · <a href="https://doi.org/10.48550/arXiv.2504.14157">10.48550/arXiv.2504.14157</a></p>
+        </div>
+      </li>
+      <li class="a-pub">
+        <div class="mono a-pub__year">2024</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.1364/OPTICA.518559" target="_blank" rel="noopener">Phase diversity-based wavefront sensing for fluorescence microscopy</a></h4>
+          <p class="a-pub__auth"><strong>Johnson C</strong>, Guo M, Schneider MC, Su Y, Khuon S, Reiser N, Wu Y, La Rivière P, Shroff H.</p>
+          <p class="a-pub__ven mono">Optica · <a href="https://doi.org/10.1364/OPTICA.518559">10.1364/OPTICA.518559</a></p>
+        </div>
+      </li>
+      <li class="a-pub a-pub--hl">
+        <div class="mono a-pub__year">2022</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.1038/s41592-022-01672-3" target="_blank" rel="noopener">Capturing the start point of the virus–cell interaction with high-speed 3D single-virus tracking</a></h4>
+          <p class="a-pub__auth"><strong>Johnson C</strong>, Exell J, Aguilar J, Welsher K.</p>
+          <p class="a-pub__ven mono">Nature Methods 19, 1642–1652 · <a href="https://doi.org/10.1038/s41592-022-01672-3">10.1038/s41592-022-01672-3</a></p>
+        </div>
+      </li>
+      <li class="a-pub">
+        <div class="mono a-pub__year">2019</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.1364/OE.27.036241" target="_blank" rel="noopener">Continuous focal translation enhances rate of volumetric imaging</a></h4>
+          <p class="a-pub__auth"><strong>Johnson C</strong>, Exell J, Kuo J, Welsher K.</p>
+          <p class="a-pub__ven mono">Optics Express 27, 36241–36258 · <a href="https://doi.org/10.1364/OE.27.036241">10.1364/OE.27.036241</a></p>
+        </div>
+      </li>
+      <li class="a-pub">
+        <div class="mono a-pub__year">2019</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.3390/molecules24152826" target="_blank" rel="noopener">Real-time 3D single-particle tracking: toward active-feedback single-molecule spectroscopy in live cells</a></h4>
+          <p class="a-pub__auth">Hou S, <strong>Johnson C</strong>, Welsher K.</p>
+          <p class="a-pub__ven mono">Molecules 24(15), 2826 · <a href="https://doi.org/10.3390/molecules24152826">10.3390/molecules24152826</a></p>
+        </div>
+      </li>
+      <li class="a-pub">
+        <div class="mono a-pub__year">2019</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.1364/FIO.2019.JTu4A.101" target="_blank" rel="noopener">Point-scan volumetric imaging rate increased by an optimized linear sparse sampling pattern</a></h4>
+          <p class="a-pub__auth"><strong>Johnson C</strong>, Welsher K.</p>
+          <p class="a-pub__ven mono">Frontiers in Optics / Laser Science, JTu4A.101 · <a href="https://doi.org/10.1364/FIO.2019.JTu4A.101">10.1364/FIO.2019.JTu4A.101</a></p>
+        </div>
+      </li>
+      <li class="a-pub">
+        <div class="mono a-pub__year">2016</div>
+        <div class="a-pub__body">
+          <h4><a class="a-pub__link" href="https://doi.org/10.1021/acs.jpcb.6b04561" target="_blank" rel="noopener">Loop sequence context influences the formation and stability of the i-Motif for DNA oligomers (CCCXXX)<sub>4</sub>, X = A / T</a></h4>
+          <p class="a-pub__auth">McKim M, Buxton A, <strong>Johnson C</strong>, Metz A, Sheardy RD.</p>
+          <p class="a-pub__ven mono">J. Phys. Chem. B 120(31), 7652–7661 · <a href="https://doi.org/10.1021/acs.jpcb.6b04561">10.1021/acs.jpcb.6b04561</a></p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Invited Talks -->
+  <section class="a-talks-sec reveal" id="talks">
+    <header class="a-section-head">
+      <h2 class="a-h2">Recent &amp; upcoming invited talks</h2>
+      <p class="a-sub">Selected invited and conference talks. Full record in the <a href="cv.html">CV</a>.</p>
+    </header>
+    <ul class="a-talks-list">
+      <li class="a-talk">
+        <div class="a-talk__yr mono">2026</div>
+        <div class="a-talk__body">
+          <h4>Frontiers in Optics + Laser Science (FiO+LS), Rochester NY</h4>
+          <p class="a-talk__meta mono">Invited speaker · Optica</p>
+        </div>
+      </li>
+      <li class="a-talk">
+        <div class="a-talk__yr mono">2026</div>
+        <div class="a-talk__body">
+          <h4>ASBMB Annual Meeting - National Harbor, MD</h4>
+          <p class="a-talk__meta mono">Invited speaker · American Society for Biochemistry &amp; Molecular Biology</p>
+        </div>
+      </li>
+      <li class="a-talk">
+        <div class="a-talk__yr mono">2026</div>
+        <div class="a-talk__body">
+          <h4>SPIE Photonics West · BiOS - San Francisco, CA</h4>
+          <p class="a-talk__meta mono">Adaptive Optics &amp; Wavefront Control for Biological Systems</p>
+        </div>
+      </li>
+      <li class="a-talk">
+        <div class="a-talk__yr mono">2024</div>
+        <div class="a-talk__body">
+          <h4>Optica Imaging &amp; Applied Optics Congress · Toulouse, France</h4>
+          <p class="a-talk__meta mono">Invited speaker · adaptive optics for fluorescence microscopy</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+    <!-- Beyond the Bench -->
+  <section class="a-beyond reveal" id="beyond">
+    <header class="a-section-head">
+      <h2 class="a-h2">Beyond the bench</h2>
+      <p class="a-sub">Writing, conversations, and the ideas that shape how I work as a scientist, scholar, and leader.</p>
+    </header>
+    <ul class="a-beyond__list">
+      <li class="a-beyond__item">
+        <a href="https://gradschool.duke.edu/professional-development/blog/letting-go-and-other-lessons-mat/" target="_blank" rel="noopener">
+          <div class="a-beyond__kind mono">Essay · Duke Professional Development</div>
+          <h3>Letting Go &amp; Other Lessons from the Mat</h3>
+          <p>What Brazilian jiu-jitsu taught me about resilience, problem-solving, and showing up to hard things — and how that carries into the lab.</p>
+          <span class="a-beyond__go mono">Read ↗</span>
+        </a>
+        <img class="a-beyond__thumb" src="assets/img/beyond/bjj.jpg" alt="Courtney Johnson in a jiu-jitsu gi" loading="lazy">
+      </li>
+      <li class="a-beyond__item">
+        <a href="https://gradschool.duke.edu/professional-development/blog/unity-diversity-leading-through-crisis/" target="_blank" rel="noopener">
+          <div class="a-beyond__kind mono">Essay · Duke Professional Development</div>
+          <h3>Unity in Diversity: Leading Through Crisis</h3>
+          <p>On leading diverse teams when the ground is shifting — what holds a group together, and the leader's role in keeping it whole.</p>
+          <span class="a-beyond__go mono">Read ↗</span>
+        </a>
+        <img class="a-beyond__thumb" src="assets/img/beyond/unity.jpg" alt="Courtney Johnson with the Wellness4Researchers team at Duke" loading="lazy">
+      </li>
+      <li class="a-beyond__item">
+        <a href="https://gradschool.duke.edu/story/campaign-about-wellness-lesson-leadership/" target="_blank" rel="noopener">
+          <div class="a-beyond__kind mono">Feature · Duke Graduate School</div>
+          <h3>A Campaign About Wellness, a Lesson in Leadership</h3>
+          <p>Building a graduate-student wellness campaign — and what it taught me about service, organizing, and leading from where you stand.</p>
+          <span class="a-beyond__go mono">Read ↗</span>
+        </a>
+        <img class="a-beyond__thumb" src="assets/img/beyond/wellness.jpg" alt="Wellness4Researchers social-media campaign" loading="lazy">
+      </li>
+      <li class="a-beyond__item">
+        <a href="https://lybrandlab.org/jospod" target="_blank" rel="noopener">
+          <div class="a-beyond__kind mono">Podcast · The Journey of Science · S1E4</div>
+          <h3>The Improbable Journey</h3>
+          <p>From a fourth year undergraduate with no major to designing state-of-the-art microscopes at Janelia — a conversation about resilience, facing challenges head-on, and betting on yourself to succeed against all odds.</p>
+          <span class="a-beyond__go mono">Listen ↗</span>
+        </a>
+        <img class="a-beyond__thumb" src="assets/img/beyond/podcast.jpg" alt="The Journey of Science podcast cover, S1E4 featuring Courtney Johnson" loading="lazy">
+      </li>
+      <li class="a-beyond__item">
+        <a href="https://www.societyforscience.org/blog/2023-sts-finalists-meet-janelia-researchers/" target="_blank" rel="noopener">
+          <div class="a-beyond__kind mono">Outreach · Society for Science</div>
+          <h3>Hosting the Regeneron STS Finalists at Janelia</h3>
+          <p>Introducing the next generation of scientists to microscopy and adaptive optics during their visit to Janelia Research Campus.</p>
+          <span class="a-beyond__go mono">Read ↗</span>
+        </a>
+        <img class="a-beyond__thumb" src="assets/img/beyond/sts.jpg" alt="Courtney Johnson presenting to Regeneron STS finalists at Janelia" loading="lazy">
+      </li>
+      <li class="a-beyond__item">
+        <a href="https://ncsce.net/belhavenmeeting-fall2017/" target="_blank" rel="noopener">
+          <div class="a-beyond__kind mono">Invited talk · NCSCE · 2017</div>
+          <h3>STEM Education &amp; Civic Engagement</h3>
+          <p>Invited to speak at the National Center for Science &amp; Civic Engagement on connecting undergraduate science education with community impact.</p>
+          <span class="a-beyond__go mono">Details ↗</span>
+        </a>
+        <img class="a-beyond__thumb" src="assets/img/beyond/ncsce.jpg" alt="National Center for Science &amp; Civic Engagement logo" loading="lazy">
+      </li>
+    </ul>
+  </section>
+
+
+
+  
+
+  <!-- CV + Contact -->
+  <section class="a-contact-sec reveal" id="contact">
+    <header class="a-section-head">
+      <h2 class="a-h2">Contact</h2>
+      <p class="a-sub">Reach me directly, or follow my work.</p>
+    </header>
+    <dl class="a-contact mono">
+      <dt>Email</dt><dd><a href="mailto:johnsonc5@janelia.hhmi.org">johnsonc5@janelia.hhmi.org</a></dd>
+      <dt>Scholar</dt><dd><a href="https://scholar.google.com/citations?user=8LxDEiEAAAAJ&hl=en">8LxDEiEAAAAJ</a></dd>
+      <dt>Bluesky</dt><dd><a href="https://bsky.app/profile/ceej640.bsky.social">@ceej640.bsky.social</a></dd>
+      <dt>GitHub</dt><dd><a href="https://github.com/Ceej640">@Ceej640</a></dd>
+      <dt>ORCID</dt><dd><a href="https://orcid.org/0000-0001-5938-1176">0000-0001-5938-1176</a></dd>
+    </dl>
+  </section>
+
+  <footer class="a-colophon mono">
+    <span>© 2026 Courtney Johnson</span>
+    <span>Built with HTML, CSS, and a lot of photons.</span>
+    <span>Last updated <time>Jun 2026</time></span>
+  </footer>
+</main>
+</body>
+</html>
