@@ -9,13 +9,13 @@
 <meta property="og:description" content="Optical physicist building fluorescence microscopes that see deeper, faster, smarter.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0a0e12">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0e12'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%233fd6cb' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%233fd6cb'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0e12'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff5a5a'/%3E%3Cstop offset='40%25' stop-color='%23ffb020'/%3E%3Cstop offset='70%25' stop-color='%233fd6cb'/%3E%3Cstop offset='100%25' stop-color='%237c8cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' text-anchor='middle' fill='url(%23g)'%3ECJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=35">
+<link rel="stylesheet" href="assets/css/site.css?v=71">
 </head>
-<body data-variant="a">
+<body data-variant="a" data-color="channel">
 
 
 
@@ -35,8 +35,8 @@
     <a href="#publications">Publications</a>
     <a href="#talks">Talks</a>
     <a href="#beyond">Beyond the bench</a>
-    <a href="cv.html">CV</a>
     <a href="#contact">Contact</a>
+    <a href="cv.html">CV</a>
   </nav>
 </header>
 
@@ -77,7 +77,7 @@
       </svg>
       <div class="a-hero__scrim"></div>
     </div>
-    <div class="a-hero__cut">
+    <div class="a-hero__cut" style="opacity: 1">
       <h1 class="a-hero__title">
         Building microscopes<br>
         that see <em>farther,</em><br>
@@ -110,7 +110,7 @@
         </a>
       </div>
     </div>
-    <div class="a-hero__caption mono"><span>FIG ·</span> Single-virus trajectories on 3D intestinal epithelium · <em>Nat. Methods</em>, 2022</div>
+    <div class="a-hero__caption mono">FIG · TRAJECTORY OF VIRUS PROBING CELL SURFACES · NAT. METHODS, 2022</div>
   </section>
 
     <!-- About / Bio -->
@@ -157,7 +157,7 @@
     <div class="a-themes__grid">
       <article class="a-theme">
         <h3>Smart microscopy</h3>
-        <p>Planes can fly themselves and land, why not microscopes? I am obsessed with UX and the idea that the microscopes I build should be so easy to operate that anyone can use them.</p>
+        <p>Planes can fly themselves and land, why can microscopes not be equally autonomous? I am driven by the belief that making microscopes usable by non-experts will motivate and enable broader technology adoption.</p>
       </article>
       <article class="a-theme">
         <h3>Agentic engineering</h3>
@@ -250,7 +250,7 @@
       <li class="a-pub">
         <div class="mono a-pub__year">2026</div>
         <div class="a-pub__body">
-          <h4><a class="a-pub__link" href="https://doi.org/10.1117/12.3047138" target="_blank" rel="noopener">Phase diversity wavefront sensing for adaptive optics light-sheet fluorescence microscopy</a></h4>
+          <h4><a class="a-pub__link" href="https://doi.org/10.1117/12.3091974" target="_blank" rel="noopener">Phase diversity wavefront sensing for adaptive optics light-sheet fluorescence microscopy</a></h4>
           <p class="a-pub__auth"><strong>Johnson C</strong>, Schneider MC, Christensen R, Li X, Guo M, La Rivière P, Shroff H.</p>
           <p class="a-pub__ven mono">Proc. SPIE 13860 · Adaptive Optics &amp; Wavefront Control for Biological Systems XII · 2026</p>
         </div>
@@ -361,57 +361,69 @@
     <ul class="a-beyond__list">
       <li class="a-beyond__item">
         <a href="https://gradschool.duke.edu/professional-development/blog/letting-go-and-other-lessons-mat/" target="_blank" rel="noopener">
-          <div class="a-beyond__kind mono">Essay · Duke Professional Development</div>
+          <div class="a-beyond__txt">
+            <div class="a-beyond__kind mono">Essay · Duke Professional Development</div>
           <h3>Letting Go &amp; Other Lessons from the Mat</h3>
           <p>What Brazilian jiu-jitsu taught me about resilience, problem-solving, and showing up to hard things — and how that carries into the lab.</p>
           <span class="a-beyond__go mono">Read ↗</span>
+          </div>
+          <img class="a-beyond__thumb" src="assets/img/beyond/bjj.jpg" alt="Courtney Johnson in a jiu-jitsu gi" loading="lazy">
         </a>
-        <img class="a-beyond__thumb" src="assets/img/beyond/bjj.jpg" alt="Courtney Johnson in a jiu-jitsu gi" loading="lazy">
       </li>
       <li class="a-beyond__item">
         <a href="https://gradschool.duke.edu/professional-development/blog/unity-diversity-leading-through-crisis/" target="_blank" rel="noopener">
-          <div class="a-beyond__kind mono">Essay · Duke Professional Development</div>
+          <div class="a-beyond__txt">
+            <div class="a-beyond__kind mono">Essay · Duke Professional Development</div>
           <h3>Unity in Diversity: Leading Through Crisis</h3>
           <p>On leading diverse teams when the ground is shifting — what holds a group together, and the leader's role in keeping it whole.</p>
           <span class="a-beyond__go mono">Read ↗</span>
+          </div>
+          <img class="a-beyond__thumb" src="assets/img/beyond/unity.jpg" alt="Courtney Johnson with the Wellness4Researchers team at Duke" loading="lazy">
         </a>
-        <img class="a-beyond__thumb" src="assets/img/beyond/unity.jpg" alt="Courtney Johnson with the Wellness4Researchers team at Duke" loading="lazy">
       </li>
       <li class="a-beyond__item">
         <a href="https://gradschool.duke.edu/story/campaign-about-wellness-lesson-leadership/" target="_blank" rel="noopener">
-          <div class="a-beyond__kind mono">Feature · Duke Graduate School</div>
+          <div class="a-beyond__txt">
+            <div class="a-beyond__kind mono">Feature · Duke Graduate School</div>
           <h3>A Campaign About Wellness, a Lesson in Leadership</h3>
           <p>Building a graduate-student wellness campaign — and what it taught me about service, organizing, and leading from where you stand.</p>
           <span class="a-beyond__go mono">Read ↗</span>
+          </div>
+          <img class="a-beyond__thumb" src="assets/img/beyond/wellness.jpg" alt="Wellness4Researchers social-media campaign" loading="lazy">
         </a>
-        <img class="a-beyond__thumb" src="assets/img/beyond/wellness.jpg" alt="Wellness4Researchers social-media campaign" loading="lazy">
       </li>
       <li class="a-beyond__item">
         <a href="https://lybrandlab.org/jospod" target="_blank" rel="noopener">
-          <div class="a-beyond__kind mono">Podcast · The Journey of Science · S1E4</div>
+          <div class="a-beyond__txt">
+            <div class="a-beyond__kind mono">Podcast · The Journey of Science · S1E4</div>
           <h3>The Improbable Journey</h3>
           <p>From a fourth year undergraduate with no major to designing state-of-the-art microscopes at Janelia — a conversation about resilience, facing challenges head-on, and betting on yourself to succeed against all odds.</p>
           <span class="a-beyond__go mono">Listen ↗</span>
+          </div>
+          <img class="a-beyond__thumb" src="assets/img/beyond/podcast.jpg" alt="The Journey of Science podcast cover, S1E4 featuring Courtney Johnson" loading="lazy">
         </a>
-        <img class="a-beyond__thumb" src="assets/img/beyond/podcast.jpg" alt="The Journey of Science podcast cover, S1E4 featuring Courtney Johnson" loading="lazy">
       </li>
       <li class="a-beyond__item">
         <a href="https://www.societyforscience.org/blog/2023-sts-finalists-meet-janelia-researchers/" target="_blank" rel="noopener">
-          <div class="a-beyond__kind mono">Outreach · Society for Science</div>
+          <div class="a-beyond__txt">
+            <div class="a-beyond__kind mono">Outreach · Society for Science</div>
           <h3>Hosting the Regeneron STS Finalists at Janelia</h3>
           <p>Introducing the next generation of scientists to microscopy and adaptive optics during their visit to Janelia Research Campus.</p>
           <span class="a-beyond__go mono">Read ↗</span>
+          </div>
+          <img class="a-beyond__thumb" src="assets/img/beyond/sts.jpg" alt="Courtney Johnson presenting to Regeneron STS finalists at Janelia" loading="lazy">
         </a>
-        <img class="a-beyond__thumb" src="assets/img/beyond/sts.jpg" alt="Courtney Johnson presenting to Regeneron STS finalists at Janelia" loading="lazy">
       </li>
       <li class="a-beyond__item">
         <a href="https://ncsce.net/belhavenmeeting-fall2017/" target="_blank" rel="noopener">
-          <div class="a-beyond__kind mono">Invited talk · NCSCE · 2017</div>
+          <div class="a-beyond__txt">
+            <div class="a-beyond__kind mono">Invited talk · NCSCE · 2017</div>
           <h3>STEM Education &amp; Civic Engagement</h3>
           <p>Invited to speak at the National Center for Science &amp; Civic Engagement on connecting undergraduate science education with community impact.</p>
           <span class="a-beyond__go mono">Details ↗</span>
+          </div>
+          <img class="a-beyond__thumb" src="assets/img/beyond/ncsce.jpg" alt="National Center for Science &amp; Civic Engagement logo" loading="lazy">
         </a>
-        <img class="a-beyond__thumb" src="assets/img/beyond/ncsce.jpg" alt="National Center for Science &amp; Civic Engagement logo" loading="lazy">
       </li>
     </ul>
   </section>

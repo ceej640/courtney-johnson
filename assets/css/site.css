@@ -15,9 +15,9 @@
   --line:    oklch(28% 0.010 240 / .6);
   --line-2:  oklch(34% 0.010 240 / .55);
   --fg-0:    oklch(96% 0.005 240);     /* primary text */
-  --fg-1:    oklch(88% 0.018 215);     /* body — faint cool tint */
-  --fg-2:    oklch(75% 0.034 212);     /* muted — cool */
-  --fg-3:    oklch(72% 0.040 208);     /* faint — coolest */
+  --fg-1:    oklch(88% 0.006 240);     /* body — neutral */
+  --fg-2:    oklch(75% 0.008 240);     /* muted — neutral */
+  --fg-3:    oklch(72% 0.010 240);     /* faint — neutral */
 
   /* Fluorescent accents (shared chroma/lightness, varied hue) */
   --acc-cyan:    oklch(82% 0.16 195);  /* primary (variant A) — aqua */
@@ -89,9 +89,21 @@ body[data-variant="c"] .v-c { display:block }
 }
 .nav__brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg-0)}
 .nav__mark{
-  width:18px;height:18px;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%, var(--acc-cyan), oklch(30% 0.05 195) 70%, transparent 72%);
-  box-shadow:0 0 18px oklch(82% 0.16 195 / .55);
+  display:inline-flex;align-items:center;
+  font-family:var(--f-serif);
+  font-weight:500;font-size:1.45rem;letter-spacing:.06em;
+  line-height:1;
+}
+.nav__mark::before{
+  content:"CJ";
+  background:linear-gradient(90deg,
+    oklch(70% 0.20 25) 0%,
+    oklch(80% 0.16 70) 25%,
+    oklch(82% 0.17 140) 50%,
+    oklch(72% 0.15 230) 75%,
+    oklch(62% 0.18 300) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
 }
 body[data-variant="b"] .nav__mark{background:radial-gradient(circle at 35% 35%, var(--acc-magenta), oklch(28% 0.08 340) 70%, transparent 72%);box-shadow:0 0 18px oklch(72% 0.22 340 / .55)}
 body[data-variant="c"] .nav__mark{background:conic-gradient(from 0deg, var(--acc-magenta), var(--acc-amber), var(--acc-green), var(--acc-cyan), var(--acc-violet), var(--acc-magenta));box-shadow:0 0 18px oklch(82% 0.16 195 / .45)}
@@ -139,20 +151,20 @@ body[data-variant="c"] .nav__mark{background:conic-gradient(from 0deg, var(--acc
 .a-hero__media{position:absolute;inset:0;z-index:0;overflow:hidden}
 .a-hero__media img{
   position:absolute;
-  right:2%;top:50%;transform:translateY(-50%);
-  height:80%;width:auto;max-width:56%;
-  object-fit:contain;
+  inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:72% center;
   filter:saturate(var(--tweak-hero-saturation, 1.05)) brightness(var(--tweak-hero-brightness, .82)) contrast(1.05);
   opacity:var(--tweak-hero-opacity, .95);
 }
 @media (max-width: 900px){
-  .a-hero__media img{height:auto;width:90%;max-width:none;right:-10%;top:auto;bottom:0;transform:none;opacity:.5}
+  .a-hero__media img{object-position:65% center;opacity:.6}
 }
 .a-hero__scrim{
   position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(100deg, var(--ink-0) 0%, color-mix(in oklch, var(--ink-0) 72%, transparent) 44%, transparent 72%),
-    linear-gradient(180deg, transparent 70%, var(--ink-1) 100%);
+    linear-gradient(100deg, color-mix(in oklch, var(--ink-0) 82%, transparent) 0%, color-mix(in oklch, var(--ink-0) 50%, transparent) 46%, transparent 80%),
+    linear-gradient(180deg, transparent 68%, var(--ink-1) 100%);
 }
 .a-hero__caption{
   position:absolute;right:clamp(20px, 3vw, 40px);bottom:20px;z-index:3;
@@ -168,10 +180,10 @@ body[data-variant="c"] .nav__mark{background:conic-gradient(from 0deg, var(--acc
   position:relative;z-index:2;
   max-width:720px;
   padding:clamp(26px, 3vw, 44px) clamp(28px, 3vw, 48px);
-  background:color-mix(in oklch, var(--ink-0) 82%, transparent);
+  background:color-mix(in oklch, var(--ink-0) 52%, transparent);
   border:1px solid var(--line-2);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
 }
 .a-spectrum{
   margin-top:22px;height:3px;
@@ -341,7 +353,8 @@ body[data-variant="c"] .nav__mark{background:conic-gradient(from 0deg, var(--acc
 .a-pub__auth{margin:0 0 4px;color:var(--fg-1);font-size:.95rem}
 .a-pub__auth strong{color:var(--fg-0);font-weight:600}
 .a-pub__ven{color:var(--fg-2)}
-.a-pub__ven a{color:var(--fg-1);text-decoration:none;border-bottom:1px solid var(--line-2)}
+.a-pub__ven a{color:var(--acc-cyan);text-decoration:none;border-bottom:1px solid color-mix(in oklch, var(--acc-cyan) 35%, transparent)}
+.a-pub__ven a:hover{border-bottom-color:var(--acc-cyan)}
 .a-pub--hl{background:linear-gradient(90deg, color-mix(in oklch, var(--acc-cyan) 8%, transparent), transparent 70%)}
 
 /* Three-column row */
@@ -1554,7 +1567,7 @@ body[data-aprime="a3"]::before{
 .a-project__link{
   color:inherit;
   text-decoration:none;
-  display:inline-flex;align-items:baseline;gap:.4em;
+  display:inline;
   transition:color .18s ease;
   border-bottom:1px solid transparent;
 }
@@ -1564,6 +1577,7 @@ body[data-aprime="a3"]::before{
 .a-project__arrow{
   font-size:.7em;
   color:var(--fg-3);
+  margin-left:.3em;
   transition:transform .18s ease, color .18s ease;
   display:inline-block;
 }
@@ -1876,14 +1890,17 @@ body[data-aprime="a3"]::before{
   background:var(--acc-cyan);
 }
 
-/* Hero CTA primary button — cyan instead of white */
+/* Hero CTA primary button — metallic/neutral, aqua only on hover */
 .a-btn:not(.a-btn--ghost){
-  background:var(--acc-cyan);
-  border-color:var(--acc-cyan);
-  color:#06121a;
+  background:linear-gradient(160deg, oklch(92% 0.004 230), oklch(82% 0.006 230));
+  border-color:oklch(86% 0.006 230);
+  color:#0a1418;
 }
 .a-btn:not(.a-btn--ghost):hover{
-  filter:brightness(1.08);
+  background:linear-gradient(160deg, var(--acc-cyan), color-mix(in oklch, var(--acc-cyan) 78%, white));
+  border-color:var(--acc-cyan);
+  color:#06121a;
+  box-shadow:0 0 22px oklch(82% 0.16 195 / .35);
 }
 
 /* Ghost button hover border picks up accent */
@@ -2074,23 +2091,34 @@ body[data-aprime="a3"]::before{
 .a-colophon span{color:var(--fg-2)}
 .a-colophon time{color:var(--acc-cyan)}
 
-/* Beyond-the-bench: text left, square image right */
-.a-beyond__item{position:relative;display:block;padding-right:210px;min-height:178px;overflow:hidden}
+/* Beyond-the-bench: full-width rows, square image fills row height */
+.a-beyond__item{position:relative;background:var(--ink-1);overflow:hidden}
+.a-beyond__item:nth-child(even){background:color-mix(in oklch, var(--ink-2) 60%, var(--ink-1))}
 .a-beyond__item a{
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  padding:0;
+}
+.a-beyond__item a:hover{background:color-mix(in oklch, var(--acc-cyan) 5%, transparent)}
+.a-beyond__txt{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:22px 24px;
   min-width:0;
 }
-.a-beyond__item p{flex:1}
 .a-beyond__thumb{
-  position:absolute;top:50%;right:0;transform:translateY(-50%);
-  width:178px;height:178px !important;
+  width:172px;height:172px;
   object-fit:cover;
-  border-left:1px solid var(--line-2);
+  margin:18px 18px 18px 0;
   background:var(--ink-2);
+  transition:filter .25s ease;
 }
+.a-beyond__item a:hover .a-beyond__thumb{filter:brightness(1.08)}
 @media (max-width:760px){
-  .a-beyond__item{padding-right:150px;min-height:138px}
-  .a-beyond__thumb{width:138px;height:138px !important}
+  .a-beyond__list{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .a-beyond__txt{padding:18px 20px}
 }
 
 
@@ -2144,3 +2172,103 @@ body[data-aprime="a3"]::before{
   padding:8px 14px;cursor:pointer;border-radius:2px;
 }
 .lightbox__close:hover{color:var(--fg-0);border-color:var(--acc-cyan)}
+
+/* =========================================================
+   COLOR POP — spectrum ticks, warm accent, gradient rules
+   ========================================================= */
+
+/* Secondary warm accent (amber-coral) for variety against the aqua */
+:root{ --acc-warm: oklch(80% 0.15 55); }
+
+/* Spectrum tick before every section title — recurs the hero bar motif */
+.a-section-head .a-h2{
+  position:relative;
+  padding-top:20px;
+  display:table;
+  justify-self:start;
+}
+.a-section-head .a-h2::before{
+  content:"";
+  position:absolute; top:0; left:0;
+  width:100%; height:3px;
+  border-radius:2px;
+  background:var(--sec, var(--acc-cyan));
+  box-shadow:0 0 14px color-mix(in oklch, var(--sec, var(--acc-cyan)) 45%, transparent);
+}
+/* Section title text takes the local section hue */
+body[data-color="channel"] .a-section-head .a-h2{ color:var(--sec, var(--fg-0)); }
+body[data-color="channel"] #about .a-h2{ color:var(--sec, var(--fg-0)); }
+body[data-color="channel"] #about .a-h2{ color:var(--sec, var(--fg-0)); }
+
+/* Warm accent on "Beyond the bench" kind labels */
+.a-beyond__kind{ color:var(--acc-warm); }
+
+/* Gradient hairline at the top of major sections */
+.a-themes, .a-projects, .a-pubs, .a-talks-sec, .a-beyond, .a-contact-sec{
+  position:relative;
+}
+.a-themes::before, .a-projects::before, .a-pubs::before,
+.a-talks-sec::before, .a-beyond::before, .a-contact-sec::before{
+  content:"";
+  position:absolute; top:0; left:0; right:0;
+  height:1px;
+  background:linear-gradient(90deg,
+    transparent 0%,
+    color-mix(in oklch, var(--acc-cyan) 55%, transparent) 18%,
+    color-mix(in oklch, var(--acc-violet) 45%, transparent) 50%,
+    color-mix(in oklch, var(--acc-cyan) 55%, transparent) 82%,
+    transparent 100%);
+  opacity:.7;
+}
+
+/* Active nav link gets a warm underline so the current section reads */
+.nav__links a:hover{ color:var(--acc-warm); }
+
+/* =========================================================
+   PER-SECTION SPECTRAL ACCENTS (ROYGBIV → white)
+   Each section sets --sec; the title tick, bullets, and
+   local accents inherit it. Rollback: set
+   <body data-color="mono"> to fall back to global aqua.
+   ========================================================= */
+body[data-color="channel"] #about{        --sec: oklch(68% 0.19 25);  --acc-cyan: var(--sec); --fg-2: oklch(75% 0.05 25); }
+body[data-color="channel"] #interests{    --sec: oklch(77% 0.16 55);  --acc-cyan: var(--sec); --fg-2: oklch(77% 0.05 55); }
+body[data-color="channel"] #research{     --sec: oklch(85% 0.15 90);  --acc-cyan: var(--sec); --fg-2: oklch(80% 0.05 90); }
+body[data-color="channel"] #publications{ --sec: oklch(80% 0.17 145); --acc-cyan: var(--sec); --fg-2: oklch(77% 0.05 145); }
+body[data-color="channel"] #talks{        --sec: oklch(72% 0.15 240); --acc-cyan: var(--sec); --fg-2: oklch(75% 0.05 240); }
+body[data-color="channel"] #beyond{       --sec: oklch(56% 0.15 260); --acc-cyan: var(--sec); --fg-2: oklch(70% 0.06 260); }
+body[data-color="channel"] #contact{      --sec: oklch(66% 0.18 300); --acc-cyan: var(--sec); --fg-2: oklch(73% 0.05 300); }
+
+/* Bullets, markers, and local accents follow the section hue */
+body[data-color="channel"] .a-bul li::marker{ color:var(--sec, var(--acc-cyan)); }
+body[data-color="channel"] .a-pub-list li::marker{ color:var(--sec, var(--acc-cyan)); }
+body[data-color="channel"] #research .a-project__refs em{ color:var(--sec); font-style:italic; }
+body[data-color="channel"] #research .a-project__link:hover,
+body[data-color="channel"] #research .a-project__arrow{ color:var(--sec); }
+body[data-color="channel"] #interests .a-theme__n{ color:var(--sec); }
+body[data-color="channel"] #publications .a-pubs__more a{ color:var(--sec); }
+body[data-color="channel"] #talks .a-talk__yr{ color:var(--sec); }
+body[data-color="channel"] #beyond .a-beyond__kind{ color:var(--sec); }
+
+/* Top-right nav links mirror the spectral section colors */
+body[data-color="channel"] .nav__links a[href="#about"]{        --nav: oklch(68% 0.19 25); }
+body[data-color="channel"] .nav__links a[href="#interests"]{    --nav: oklch(77% 0.16 55); }
+body[data-color="channel"] .nav__links a[href="#research"]{     --nav: oklch(85% 0.15 90); }
+body[data-color="channel"] .nav__links a[href="#publications"]{ --nav: oklch(80% 0.17 145); }
+body[data-color="channel"] .nav__links a[href="#talks"]{        --nav: oklch(72% 0.15 240); }
+body[data-color="channel"] .nav__links a[href="#beyond"]{       --nav: oklch(56% 0.15 260); }
+body[data-color="channel"] .nav__links a[href="#contact"]{      --nav: oklch(66% 0.18 300); }
+body[data-color="channel"] .nav__links a[href="cv.html"]{       --nav: oklch(97% 0 0); }
+body[data-color="channel"] .nav__links a{ color:var(--nav, var(--fg-2)); opacity:.82; }
+body[data-color="channel"] .nav__links a:hover{ opacity:1; }
+
+/* Tonal rhythm — alternate section backgrounds so the page has a pulse */
+body[data-color="channel"] .a-themes,
+body[data-color="channel"] .a-pubs,
+body[data-color="channel"] .a-beyond{
+  background:var(--ink-1);
+}
+body[data-color="channel"] .a-projects,
+body[data-color="channel"] .a-talks-sec,
+body[data-color="channel"] .a-contact-sec{
+  background:var(--ink-0);
+}

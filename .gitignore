@@ -3,6 +3,11 @@ uploads/
 screenshots/
 .thumbnail
 
+# Rollback snapshots — local history only
+index.rollback.html
+*.rollback.css
+*.aqua-rollback.css
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
