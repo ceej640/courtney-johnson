@@ -6,6 +6,16 @@
    C  Spectrum   — imagery-as-UI, spectral accent band
    ========================================================= */
 
+/* Metric-matched fallback for Newsreader — prevents font-load reflow/overlap */
+@font-face{
+  font-family:'Newsreader Fallback';
+  src:local('Georgia');
+  size-adjust:94%;
+  ascent-override:92%;
+  descent-override:24%;
+  line-gap-override:0%;
+}
+
 :root{
   /* Shared dark palette (oklch) */
   --ink-0:   oklch(8%  0.008 240);     /* near-black */
@@ -27,7 +37,7 @@
   --acc-violet:  oklch(72% 0.18 295);
 
   /* Type */
-  --f-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --f-serif: 'Newsreader', 'Newsreader Fallback', 'Iowan Old Style', Georgia, serif;
   --f-sans:  'Inter', system-ui, -apple-system, sans-serif;
   --f-tight: 'Inter Tight', 'Inter', system-ui, sans-serif;
   --f-mono:  'Geist Mono', ui-monospace, 'Menlo', monospace;
@@ -151,14 +161,14 @@ body[data-variant="c"] .nav__mark{background:conic-gradient(from 0deg, var(--acc
 .a-hero__media{position:absolute;inset:0;z-index:0;overflow:hidden}
 .a-hero__media img{
   position:absolute;
-  inset:0;
-  width:100%;height:100%;
-  object-fit:cover;object-position:72% center;
+  right:3%;top:50%;transform:translateY(-50%);
+  height:74%;width:auto;max-width:58%;
+  object-fit:contain;
   filter:saturate(var(--tweak-hero-saturation, 1.05)) brightness(var(--tweak-hero-brightness, .82)) contrast(1.05);
   opacity:var(--tweak-hero-opacity, .95);
 }
 @media (max-width: 900px){
-  .a-hero__media img{object-position:65% center;opacity:.6}
+  .a-hero__media img{height:auto;width:88%;max-width:none;right:-6%;top:auto;bottom:0;transform:none;opacity:.55}
 }
 .a-hero__scrim{
   position:absolute;inset:0;z-index:1;
@@ -1911,8 +1921,7 @@ body[data-aprime="a3"]::before{
 
 /* About lede: tint the em already cyan; add cyan to section-leading 'a-lede' first letter accent rule */
 .a-about__text .a-lede{
-  border-left:2px solid var(--acc-cyan);
-  padding-left:18px;
+  padding-left:0;
 }
 
 /* Theme card numbers already cyan; add a top accent rule on hover */
@@ -2198,7 +2207,21 @@ body[data-aprime="a3"]::before{
 /* Section title text takes the local section hue */
 body[data-color="channel"] .a-section-head .a-h2{ color:var(--sec, var(--fg-0)); }
 body[data-color="channel"] #about .a-h2{ color:var(--sec, var(--fg-0)); }
-body[data-color="channel"] #about .a-h2{ color:var(--sec, var(--fg-0)); }
+
+/* About: give its standalone h2 the same spectral bar as other sections */
+#about .a-about__text .a-h2{
+  position:relative;
+  padding-top:20px;
+  display:table;
+}
+#about .a-about__text .a-h2::before{
+  content:"";
+  position:absolute; top:0; left:0;
+  width:100%; height:3px;
+  border-radius:2px;
+  background:var(--sec, var(--acc-cyan));
+  box-shadow:0 0 14px color-mix(in oklch, var(--sec, var(--acc-cyan)) 45%, transparent);
+}
 
 /* Warm accent on "Beyond the bench" kind labels */
 .a-beyond__kind{ color:var(--acc-warm); }
